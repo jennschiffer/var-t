@@ -1,0 +1,42 @@
+/** var t; // stylesheet **/
+
+/* global */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; font-family: "Share Tech Mono", sans-serif; width: 100%; max-width: 700px; font-size: 1.2em; }
+a { text-decoration: none; color: blue; }
+
+@-webkit-keyframes rainbow {
+  10% { background-color: rgba(255, 105, 180, 0.65); }
+  20% { background-color: rgba(167, 105, 255, 0.65); }
+  40% { background-color: rgba(105, 213, 255, 0.65); }
+  60% { background-color: rgba(109, 255, 105, 0.65); }
+  80% { background-color: rgba(255, 227, 105, 0.65); }
+  100% { background-color: rgba(255, 105, 105, 0.65); }
+}
+@keyframes rainbow {
+  10% { background-color: rgba(255, 105, 180, 0.65); }
+  20% { background-color: rgba(167, 105, 255, 0.65); }
+  40% { background-color: rgba(105, 213, 255, 0.65); }
+  60% { background-color: rgba(109, 255, 105, 0.65); }
+  80% { background-color: rgba(255, 227, 105, 0.65); }
+  100% { background-color: rgba(255, 105, 105, 0.65); }
+}
+
+header { font-size: 1.5em; margin: 0; background-color: #efefef; -webkit-animation: rainbow 10s infinite alternate; animation: rainbow 10s infinite alternate; padding: 10px; }
+header h1,
+header h2,
+header h3 { display: inline; font-size: 1.4em; }
+header h2 { font-weight: normal; font-size: 1em; font-style: italic; }
+header h3 { font-size: .8em; font-weight: normal;}
+header em { font-style: normal; color: red; }
+header i { font-style: italic; color: gray; font-weight: normal; }
+
+article { line-height: 1.5em; }
+article h3,
+nav h3 { font-size: 1.5em; }
+
+nav { border: 5px solid black; padding: 10px; margin: 40px 0; }
+nav h3 { margin: .5em 0; }
+
+footer { padding: 5px 10px; background-color: #efefef; -webkit-animation: rainbow 10s infinite alternate; animation: rainbow 10s infinite alternate; }
+footer a { color: #fff; }
