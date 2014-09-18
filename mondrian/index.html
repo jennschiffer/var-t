@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" id="mondrian">
+
+  <head>
+    <title>var t; //mondrian</title>
+    <meta charset="utf-8" />
+    <link href="http://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet" type="text/css" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+
+    <link href="../_partials/vartists.html" rel="import" />
+  </head>
+
+  <body>
+
+    <header>
+      /**<br />
+      * <h1>v<a href="../index.html">ar t</a>;</h1><br />
+      * <h2>Learning about art, using JavaScript.</h2><br />
+      * <h3>@author <a href="http://jennmoney.biz">Jenn Schiffer</a></h3><br />
+      */</h1>
+    </header>
+
+    <article>
+
+      <h3>// Piet Mondrian</h3>
+
+      <p>I started with Mondrian not because he is my favorite artist (he is not), or that his work is very recognizeable (it is), but because I thought it would be a fun and easy start to this project (it was).</p>
+
+      <p>Mondrian was a Dutch painter who changed his name in 1906 from <em>Pieter Cornelis Mondriaan</em> as sort of a personal rebranding when he left the Netherlands for Paris. A man with as bad luck as the rest of us schmucks, he went back to the Netherlands to visit and ended up stuck there because of World War I (thanks Obama). He was able to go back to Paris in 1918 and that seems to be when he changed his style from Post-Impressionist to the more abstract and grid-based work he is known for today.</p>
+
+      <p class="image">
+        <img src="Mondrian_CompRYB.jpg" alt="Mondrian Painting" title="Composition with Yellow, Blue, and Red, 1937–42, oil on canvas, 72.5 × 69 cm, Tate Gallery, London" /><br />
+        <span class="caption">Composition with Yellow, Blue, and Red, 1937–42, oil on canvas, 72.5 × 69 cm, Tate Gallery, London</span>
+    </p>
+
+      <p>His work from this time is categorized as part of the <a href="http://en.wikipedia.org/wiki/De_Stijl">De Stijl</a> movement. Also known as "neoplasticism," the style (literally the direct translation of "De Stijl") originated in Amsterdam shortly before he went back to Paris.</p>
+
+      <p>Mondrian found his way to Manhattan, New York, for the last years of his life. He died of pneumonia. I almost died of pneumonia in Brooklyn, so I guess he <em>was</em> much less lucky that I.</p>
+
+      <p class="hr">* * *</p>
+
+      <p>I am quite fond of grids and tables and also primary colors, and Mondrian's very recognizable post-WWI work always catches my eye from afar in exhibits.</p>
+
+
+      <p>Sources:
+        <ul>
+          <li><a href="http://en.wikipedia.org/wiki/Piet_Mondrian">Wikipedia</a></li>
+          <li><a href="">wikipedia</a></li>
+          <li><a href="">wikipedia</a></li>
+        </ul>
+      </p>
+
+    </article>
+
+    <!-- Include platform.js -->
+    <script src="../bower_components/platform/platform.js"></script>
+
+    <!-- Listen for the HTMLImportsLoaded event -->
+    <script>
+      window.addEventListener('HTMLImportsLoaded', function() {
+        var link = document.querySelector('link[rel=import]');
+        var content = link.import.querySelector('footer');
+        document.body.appendChild(document.importNode(content, true));
+      });
+    </script>
+
+
+    <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
+    <script type="text/javascript">try{ clicky.init(23165); }catch(e){}</script>
+    <noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23165ns.gif" /></p></noscript>
+  </body>
+</html>

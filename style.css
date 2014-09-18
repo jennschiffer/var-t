@@ -2,7 +2,7 @@
 
 /* global */
 * { box-sizing: border-box; }
-body { margin: 0; padding: 20px; font-family: "Share Tech Mono", sans-serif; width: 100%; max-width: 700px; font-size: 1.2em; }
+body { background-color: #fff; margin: 0; padding: 20px; margin: 10px; font-family: "Share Tech Mono", sans-serif; width: 100%; max-width: 700px; font-size: 1.2em; }
 a { text-decoration: none; color: blue; }
 
 @-webkit-keyframes rainbow {
@@ -35,8 +35,30 @@ article { line-height: 1.5em; }
 article h3,
 nav h3 { font-size: 1.5em; }
 
-nav { border: 5px solid black; padding: 10px; margin: 40px 0; }
-nav h3 { margin: .5em 0; }
+footer #vartists { border: 5px solid black; padding: 10px; margin: 40px 0; }
+footer h3 { margin: .5em 0; }
 
-footer { padding: 5px 10px; background-color: #efefef; -webkit-animation: rainbow 10s infinite alternate; animation: rainbow 10s infinite alternate; }
-footer a { color: #fff; }
+.image { text-align: center; }
+.caption { font-size: .8em; color: #666; font-style: italic; }
+.hr { text-align: center; }
+
+#copyright { padding: 5px 10px; background-color: #efefef; -webkit-animation: rainbow 10s infinite alternate; animation: rainbow 10s infinite alternate; }
+#copyright a { color: #fff; }
+
+/* mondrian */
+@-webkit-keyframes mondrian {
+  33% { background-color: rgba(255, 0, 0, 1); }
+  66% { background-color: rgba(255, 255, 0, 1); }
+  99% { background-color: rgba(0, 0, 255, 1); }
+}
+@keyframes mondrian {
+  33% { background-color: rgba(255, 0, 0, 1); }
+  66% { background-color: rgba(255, 255, 0, 1); }
+  99% { background-color: rgba(0, 0, 255, 1); }
+}
+
+#mondrian { background: url('mondrian/Mondrian_CompRYB.jpg') fixed; }
+#mondrian header a { color: #000; text-decoration: underline; }
+#mondrian header,
+#mondrian footer { -webkit-animation: mondrian 10s infinite alternate; animation: mondrian 10s infinite alternate; padding: 10px; }
+.hr { color: red; font-size: 1.5em; }

@@ -4,19 +4,19 @@
   <head>
     <title>var t;</title>
     <meta charset="utf-8" />
-    <link href="http://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="_partials/vartists.html" rel="import" />
   </head>
 
   <body>
-    <header>
+
+    <header>  
       /**<br />
-      * <h1>v<a href="/">ar t</a>;</h1><br />
+      * <h1>v<a href="">ar t</a>;</h1><br />
       * <h2>Learning about art, using JavaScript.</h2><br />
-      * <br />
       * <h3>@author <a href="http://jennmoney.biz">Jenn Schiffer</a></h3><br />
-      */</h1>
+      */
     </header>
 
     <article id="intro">
@@ -33,19 +33,20 @@
 
     </article>
 
-    <nav id="posts">
+    <!-- Include platform.js -->
+    <script src="bower_components/platform/platform.js"></script>
 
-      <h3>// (v)artists</h3>
+    <!-- Listen for the HTMLImportsLoaded event -->
+    <script>
+      window.addEventListener('HTMLImportsLoaded', function() {
+        var link = document.querySelector('link[rel=import]');
+        var content = link.import.querySelector('footer');
+        document.body.appendChild(document.importNode(content, true));
+      });
+    </script>
 
-      <ol>
-        <li><a href="mondrian/index.html">Piet Mondrian</a> <span class="date">Sept. 18, 2014</span></li>
-        <li>Next: René Magritte</li>
-      </ol> 
-
-    </nav>
-
-    <footer>
-      &copy; jenn schiffer. <a href="http://github.com/jennschiffer/vart">open source everything</a>. 
-    </footer>
+    <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
+    <script type="text/javascript">try{ clicky.init(23165); }catch(e){}</script>
+    <noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23165ns.gif" /></p></noscript>
   </body>
 </html>
