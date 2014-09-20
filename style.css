@@ -60,5 +60,5 @@ footer h3 { margin: .5em 0; }
 #mondrian { background: url('mondrian/Mondrian_CompRYB.jpg') fixed; }
 #mondrian header a { color: #000; text-decoration: underline; }
 #mondrian header,
-#mondrian footer { -webkit-animation: mondrian 10s infinite alternate; animation: mondrian 10s infinite alternate; padding: 10px; }
+#mondrian #copyright { -webkit-animation: mondrian 10s infinite alternate; animation: mondrian 10s infinite alternate; padding: 10px; }
 .hr { color: red; font-size: 1.5em; }
