@@ -2,7 +2,7 @@
 
 /* global */
 * { box-sizing: border-box; }
-body { background-color: #fff; margin: 0; padding: 20px; margin: 10px; font-family: monospace, sans-serif; width: 100%; max-width: 700px; font-size: 1.2em; }
+body { background-color: #fff; margin: 0; padding: 20px; margin: 10px; font-family: 'Helvetica', Arial, sans-serif; width: 100%; max-width: 700px; font-size: 1.2em; }
 a { text-decoration: none; color: blue; }
 img { max-width: 100%; }
 
@@ -22,6 +22,8 @@ img { max-width: 100%; }
   80% { background-color: rgba(255, 227, 105, 0.65); }
   100% { background-color: rgba(255, 105, 105, 0.65); }
 }
+
+header, h1, h2, h3, h4, h5, h6, blockquote { font-family: monospace; }
 
 header { font-size: 1.5em; margin: 0; background-color: #efefef; -webkit-animation: rainbow 10s infinite alternate; animation: rainbow 10s infinite alternate; padding: 10px; }
 header h1,
@@ -43,10 +45,13 @@ footer h3 { margin: .5em 0; }
 .caption { font-size: .8em; color: #666; font-style: italic; }
 .hr { text-align: center; }
 
+#about { font-style: italic; }
 #vartists li { margin: 1em 0; }
 
-#copyright { font-size: .7em; padding: 5px 10px; background-color: #efefef; -webkit-animation: rainbow 10s infinite alternate; animation: rainbow 10s infinite alternate; }
+#copyright { font-size: .6em; padding: 5px 10px; background-color: #efefef; -webkit-animation: rainbow 10s infinite alternate; animation: rainbow 10s infinite alternate; }
 #copyright a { color: #fff; }
+
+.soon { opacity: .4; }
 
 /* mondrian */
 @-webkit-keyframes mondrian {
