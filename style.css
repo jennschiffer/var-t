@@ -2,8 +2,9 @@
 
 /* global */
 * { box-sizing: border-box; }
-body { background-color: #fff; margin: 0; padding: 20px; margin: 10px; font-family: "Share Tech Mono", sans-serif; width: 100%; max-width: 700px; font-size: 1.2em; }
+body { background-color: #fff; margin: 0; padding: 20px; margin: 10px; font-family: monospace, sans-serif; width: 100%; max-width: 700px; font-size: 1.2em; }
 a { text-decoration: none; color: blue; }
+img { max-width: 100%; }
 
 @-webkit-keyframes rainbow {
   10% { background-color: rgba(255, 105, 180, 0.65); }
@@ -26,7 +27,7 @@ header { font-size: 1.5em; margin: 0; background-color: #efefef; -webkit-animati
 header h1,
 header h2,
 header h3 { display: inline; font-size: 1.4em; }
-header h2 { font-weight: normal; font-size: 1em; font-style: italic; }
+header h2 { font-weight: normal; font-size: .9em; font-style: italic; }
 header h3 { font-size: .8em; font-weight: normal;}
 header em { font-style: normal; color: red; }
 header i { font-style: italic; color: gray; font-weight: normal; }
@@ -42,7 +43,9 @@ footer h3 { margin: .5em 0; }
 .caption { font-size: .8em; color: #666; font-style: italic; }
 .hr { text-align: center; }
 
-#copyright { padding: 5px 10px; background-color: #efefef; -webkit-animation: rainbow 10s infinite alternate; animation: rainbow 10s infinite alternate; }
+#vartists li { margin: 1em 0; }
+
+#copyright { font-size: .6em; padding: 5px 10px; background-color: #efefef; -webkit-animation: rainbow 10s infinite alternate; animation: rainbow 10s infinite alternate; }
 #copyright a { color: #fff; }
 
 /* mondrian */
@@ -57,8 +60,12 @@ footer h3 { margin: .5em 0; }
   99% { background-color: rgba(0, 0, 255, 1); }
 }
 
-#mondrian { background: url('mondrian/Mondrian_CompRYB.jpg') fixed; }
+#mondrian { background: url('mondrian/Mondrian_Comp10.jpg') fixed; }
 #mondrian header a { color: #000; text-decoration: underline; }
 #mondrian header,
-#mondrian #copyright { -webkit-animation: mondrian 10s infinite alternate; animation: mondrian 10s infinite alternate; padding: 10px; }
+#mondrian #copyright { background-color: yellow; -webkit-animation: none; animation: none; }
 .hr { color: red; font-size: 1.5em; }
+#mondrian #copyright { background-color: red; }
+#mondrian blockquote { padding: 5px; background-color: blue; font-style: italic; color: white; }
+
+
