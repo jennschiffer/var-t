@@ -1,3 +1,100 @@
-<div id="module">
-  <img src="javascript.png" alt="javascript" />
-</div>
+<html>
+<head>
+  <style type="text/css">
+    body { margin: 0; padding: 0; color: magenta; }
+    #module { width: 100%; height: 200px; position: relative; overflow: hidden; }
+
+
+    @-webkit-keyframes javascript {
+      0% {margin-top: 0px;}
+      100% {margin-top: -800px;}
+    }
+    @-moz-keyframes javascript {
+      0% {margin-top: 0px;}
+      100% {margin-top: -800px;}
+    }
+
+    .javascript { position: absolute; 
+      -webkit-animation: javascript 15s linear infinite; 
+      -moz-animation:  javascript 15s linear infinite; 
+      animation: javascript 15s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <div id="module">
+    <pre class="javascript"><code>$(function(){
+
+    /*** init variables ***/
+
+    // just a bucket of things
+    var things = [
+      { module: 'sky', label: 'the sky'},
+      { module: 'bell', label: 'a bell'},
+      { module: 'bilboquet', label: 'a bilboquet' },
+      { module: 'apple', label: 'an apple'},
+      { module: 'hat', label: 'a hat' },
+      { module: 'javascript', label: 'a javascript' },
+      { module: 'rooster', label: 'a rooster' }
+    ];
+
+    var $sections = $('section');
+
+    // keep track of each window/label used
+    var usedGoods = [];
+    var randomCorrectWindowId = Math.floor(Math.random() * 4);
+
+    /*** helper functions ***/
+
+    // returns id of object not yet used
+    var generateRandomThing = function() {
+      var usableId;
+      var need = true;
+
+      while ( need ) {
+        usableId = Math.floor(Math.random() * things.length);
+
+        // if x is not in usedGoods, set need to false and set as used
+        if ( usedGoods.indexOf(usableId) === -1 ) {
+          usedGoods.push(usableId)
+          need = false;
+        }
+      }
+
+      return usableId;
+    };
+    
+
+    /*** let's generate some friggin art ***/
+
+    // for each section
+    $sections.each(function(i){
+      // generate random window and label to use
+      var windowId = generateRandomThing();
+      var labelId;
+
+      // if random correct window, label and window IDs are the same
+      if ( i === randomCorrectWindowId ) {
+        labelId = windowId;
+      }
+      else {
+        labelId = generateRandomThing();
+      }
+
+      // embed iframe of corresponding module
+      var $iframe = $('&lt;iframe>');
+      $iframe.attr({
+        'src': 'http://vart.institute/magritte/modules/'+ things[windowId].module+'.html',
+        'scrolling': 'no'
+      });
+      
+      $(this).find('.window').append($iframe);
+
+      // set text for this section's window
+      $(this).find('.label').text( things[labelId].label);
+
+    });
+  });</code></pre>
+  </div>
+</body>
+</html>
