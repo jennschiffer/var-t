@@ -1,13 +1,22 @@
 <html>
 <head>
   <style type="text/css">
-    img { height: 100%;}
-    #module { text-align: center;}
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0px; }
+    #module { width: 100%; height: 200px; position: relative; background: linear-gradient(#70A9D6, #DDD4E6, #EB9CBB, #B48AA0); padding: 10px;}
+
+    img { position: absolute; bottom: 0; }
+    img:nth-child(2) { left: 55px; width: 50px; }
+    img:nth-child(3) { left: 95px; width: 30px; }
   </style>
 </head>
 <body>
 <div id="module">
-  <!-- bilboquet -->
+  <div class="bilboquet"> 
+    <img src="http://vart.institute/magritte/modules/bilboquet.png" />
+    <img src="http://vart.institute/magritte/modules/bilboquet.png" />
+    <img src="http://vart.institute/magritte/modules/bilboquet.png" />
+  </div>
 </div>
 </body>
 </html>
