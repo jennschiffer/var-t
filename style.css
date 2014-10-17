@@ -7,26 +7,9 @@ a { text-decoration: none; color: blue; }
 img { max-width: 100%; }
 .center { text-align: center; }
 
-@-webkit-keyframes rainbow {
-  10% { background-color: rgba(255, 105, 180, 0.65); }
-  20% { background-color: rgba(167, 105, 255, 0.65); }
-  40% { background-color: rgba(105, 213, 255, 0.65); }
-  60% { background-color: rgba(109, 255, 105, 0.65); }
-  80% { background-color: rgba(255, 227, 105, 0.65); }
-  100% { background-color: rgba(255, 105, 105, 0.65); }
-}
-@keyframes rainbow {
-  10% { background-color: rgba(255, 105, 180, 0.65); }
-  20% { background-color: rgba(167, 105, 255, 0.65); }
-  40% { background-color: rgba(105, 213, 255, 0.65); }
-  60% { background-color: rgba(109, 255, 105, 0.65); }
-  80% { background-color: rgba(255, 227, 105, 0.65); }
-  100% { background-color: rgba(255, 105, 105, 0.65); }
-}
-
 header, h1, h2, h3, h4, h5, h6, blockquote { font-family: monospace; }
 
-header { font-size: 1.5em; margin: 0; background-color: #efefef; -webkit-animation: rainbow 10s infinite alternate; animation: rainbow 10s infinite alternate; padding: 10px; }
+header { font-size: 1.5em; margin: 0; background-color: #efefef; padding: 10px; }
 header h1,
 header h2,
 header h3 { display: inline; font-size: 1.4em; }
@@ -55,35 +38,25 @@ footer h3 { margin: .5em 0; }
 .soon { opacity: .4; }
 
 /* mondrian */
-@-webkit-keyframes mondrian {
-  33% { background-color: rgba(255, 0, 0, 1); }
-  66% { background-color: rgba(255, 255, 0, 1); }
-  99% { background-color: rgba(0, 0, 255, 1); }
-}
-@keyframes mondrian {
-  33% { background-color: rgba(255, 0, 0, 1); }
-  66% { background-color: rgba(255, 255, 0, 1); }
-  99% { background-color: rgba(0, 0, 255, 1); }
-}
-
 #mondrian { background: url('mondrian/Mondrian_Comp10.jpg') fixed; }
 #mondrian header a { color: #000; text-decoration: underline; }
 #mondrian header,
-#mondrian #copyright { background-color: yellow; -webkit-animation: none; animation: none; }
+#mondrian #copyright { background-color: yellow; }
 .hr { color: red; font-size: 1.5em; }
 #mondrian #copyright { background-color: red; }
 #mondrian blockquote { padding: 5px; background-color: blue; font-style: italic; color: white; }
 
+/* magritte */
 #magritte { background: url('magritte/assets/sky.png') fixed; }
 #magritte header a { color: #000; text-decoration: underline; }
 #magritte header, 
-#magritte #copyright { background-color: #B3A6A0; -webkit-animation: none; animation: none; }
+#magritte #copyright { background-color: #B3A6A0; }
 .hr { color: #B3A6A0; font-size: 1.5em; }
 #magritte #copyright { background-color: #B3A6A0; }
 #magritte blockquote { padding: 5px; background-color: lightblue; font-style: italic; color: #000; }
 #magritte .caption { font-size: .8em; color: #666; }
 #magritte img { margin: 0 auto; }
 #magritte-demo { background: url('magritte/assets/sky.png') fixed;}
-#magritte-demo header { margin-bottom: 50px;background-color: #B3A6A0; -webkit-animation: none; animation: none; }
-#magritte-demo #copyright {background-color: #B3A6A0; -webkit-animation: none; animation: none; }
+#magritte-demo header { margin-bottom: 50px; background-color: #B3A6A0; }
+#magritte-demo #copyright {background-color: #B3A6A0; }
 
