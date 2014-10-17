@@ -5,6 +5,7 @@
 body { background-color: #fff; margin: 0; padding: 20px; margin: 10px; font-family: 'Helvetica', Arial, sans-serif; width: 100%; max-width: 700px; font-size: 1.2em; }
 a { text-decoration: none; color: blue; }
 img { max-width: 100%; }
+.center { text-align: center; }
 
 @-webkit-keyframes rainbow {
   10% { background-color: rgba(255, 105, 180, 0.65); }
@@ -73,4 +74,15 @@ footer h3 { margin: .5em 0; }
 #mondrian #copyright { background-color: red; }
 #mondrian blockquote { padding: 5px; background-color: blue; font-style: italic; color: white; }
 
+#magritte { background: url('magritte/assets/sky.png') fixed; }
+#magritte header a { color: #000; text-decoration: underline; }
+#magritte header, 
+#magritte #copyright { background-color: #B3A6A0; -webkit-animation: none; animation: none; }
+.hr { color: #B3A6A0; font-size: 1.5em; }
+#magritte #copyright { background-color: #B3A6A0; }
+#magritte blockquote { padding: 5px; background-color: lightblue; font-style: italic; color: #000; }
+#magritte .caption { font-size: .8em; color: #666; }
+#magritte img { margin: 0 auto; }
+#magritte-demo { background: url('magritte/assets/sky.png') fixed;}
+#magritte-demo header { margin-bottom: 50px; }
 
