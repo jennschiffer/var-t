@@ -9,7 +9,7 @@ img { max-width: 100%; }
 
 header, h1, h2, h3, h4, h5, h6, blockquote { font-family: monospace; }
 
-header { font-size: 1.5em; margin: 0; background-color: #efefef; padding: 10px; }
+header { font-size: 1.5em; margin: 0; background-color: hotpink; padding: 10px; }
 header h1,
 header h2,
 header h3 { display: inline; font-size: 1.4em; }
@@ -32,7 +32,7 @@ footer h3 { margin: .5em 0; }
 #about { font-style: italic; }
 #vartists li { margin: 1em 0; }
 
-#copyright { font-size: .6em; padding: 5px 10px; background-color: #efefef; -webkit-animation: rainbow 10s infinite alternate; animation: rainbow 10s infinite alternate; }
+#copyright { font-size: .6em; padding: 5px 10px; background-color: #efefef; }
 #copyright a { color: #fff; }
 
 .soon { opacity: .4; }
