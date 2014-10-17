@@ -84,6 +84,6 @@ footer h3 { margin: .5em 0; }
 #magritte .caption { font-size: .8em; color: #666; }
 #magritte img { margin: 0 auto; }
 #magritte-demo { background: url('magritte/assets/sky.png') fixed;}
-#magritte-demo header { margin-bottom: 50px; -webkit-animation: none; animation: none; }
-#magritte-demo #copyright { -webkit-animation: none; animation: none; }
+#magritte-demo header { margin-bottom: 50px;background-color: #B3A6A0; -webkit-animation: none; animation: none; }
+#magritte-demo #copyright {background-color: #B3A6A0; -webkit-animation: none; animation: none; }
 
