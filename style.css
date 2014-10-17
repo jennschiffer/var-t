@@ -32,7 +32,7 @@ footer h3 { margin: .5em 0; }
 #about { font-style: italic; }
 #vartists li { margin: 1em 0; }
 
-#copyright { font-size: .6em; padding: 5px 10px; background-color: #efefef; }
+#copyright { font-size: .6em; padding: 5px 10px; background-color: #ccc; }
 #copyright a { color: #fff; }
 
 .soon { opacity: .4; }
@@ -51,12 +51,12 @@ footer h3 { margin: .5em 0; }
 #magritte header a { color: #000; text-decoration: underline; }
 #magritte header, 
 #magritte #copyright { background-color: #B3A6A0; }
-.hr { color: #B3A6A0; font-size: 1.5em; }
+#magritte .hr { color: #B3A6A0; font-size: 1.5em; }
 #magritte #copyright { background-color: #B3A6A0; }
 #magritte blockquote { padding: 5px; background-color: lightblue; font-style: italic; color: #000; }
 #magritte .caption { font-size: .8em; color: #666; }
 #magritte img { margin: 0 auto; }
 #magritte-demo { background: url('magritte/assets/sky.png') fixed;}
-#magritte-demo header { margin-bottom: 50px; background-color: #B3A6A0; }
-#magritte-demo #copyright {background-color: #B3A6A0; }
+#magritte-demo header { margin-bottom: 50px; background-color: #fff; }
+#magritte-demo #copyright {background-color: #fff; }
 
