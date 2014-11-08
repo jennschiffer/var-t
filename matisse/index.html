@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" id="mondrian">
+
+  <head>
+    <title>var t; //matisse</title>
+    <meta charset="utf-8" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+    <link href="../imports/vartists.html" rel="import" />
+  </head>
+
+  <body>
+
+    <header>  
+      /**<br />
+      * <h1>v<a href="/">ar t</a>;</h1><br />
+      * <h2>Learning about art, using JavaScript.</h2><br />
+      * <h3>@author <a href="http://jennmoney.biz">Jenn Schiffer</a></h3><br />
+      */
+    </header>
+
+    <article>
+
+      <h3>// Henri Matisse</h3>
+
+      <blockquote></blockquote>
+
+      <p>
+
+      <p>Sources:
+        <ul>
+          <li><a href="http://en.wikipedia.org/wiki/Henri_Matisse">wikipedia</a></li>
+          <li><a href="http://www.moma.org/collection/artist.php?artist_id=4057">MoMA's Matisse Cut-Outs Exhibit, open until 2/8/2015</a></li>
+      </ul>
+      </p>
+
+    </article>
+
+    <!-- Include platform.js -->
+    <script src="../bower_components/platform/platform.js"></script>
+
+    <!-- Listen for the HTMLImportsLoaded event -->
+    <script>
+      window.addEventListener('HTMLImportsLoaded', function() {
+        var link = document.querySelector('link[rel=import]');
+        var content = link.import.querySelector('footer');
+        document.body.appendChild(document.importNode(content, true));
+      });
+    </script>
+
+    <!-- codepen -->
+    <script async src="//codepen.io/assets/embed/ei.js"></script>
+
+    <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(23165); }catch(e){}</script>
+<noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23165ns.gif" /></p></noscript>
+  </body>
+</html>
