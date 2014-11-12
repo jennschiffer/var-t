@@ -60,3 +60,14 @@ footer h3 { margin: .5em 0; }
 #magritte-demo header { margin-bottom: 50px; background-color: #fff; }
 #magritte-demo #copyright {background-color: #fff; }
 
+/* matisse */
+#matisse { background: url('matisse/assets/bleue.jpg') fixed; }
+#matisse header a { color: #fff; text-decoration: underline; }
+#matisse header, 
+#matisse #copyright { background-color: #3E5DAD; }
+#matisse .hr { color: #3E5DAD; font-size: 1.5em; }
+#matisse #copyright { background-color: #3E5DAD; }
+#matisse blockquote { padding: 5px; background-color: lightblue; font-style: italic; color: #000; }
+#matisse img { margin: 0 auto; }
+
+
