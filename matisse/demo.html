@@ -113,15 +113,7 @@
       // 3. else, we can draw a line of our shape...
       else {
         
-        // 3.a get the previous x,y clicked
-        var lastX = shape.coords[shape.coords.length - 1][0];
-        var lastY = shape.coords[shape.coords.length - 1][1];
-        
-        // 3.b draw the line
-        ctx.lineTo(currentX, currentY);
-        ctx.stroke();
-        
-        // 3.c if this is within 10px of the initial coordinate and there are less than three points in the shape so far, close it and fill the shape and show menu again
+        // 3.a if this is within 10px of the initial coordinate and there are less than three points in the shape so far, "snap to" the start point and fill the shape and show menu again
         if ( Math.abs( shape.startX - currentX ) < 11 && Math.abs( shape.startY - currentY ) < 11 && shape.coords.length > 2 ) {
                   
           ctx.lineTo( shape.startX, shape.startY);
@@ -136,6 +128,12 @@
           shape.status = false; 
           shape.coords = [];
           return;
+        }
+
+        else {
+          // 3.b draw the line
+          ctx.lineTo(currentX, currentY);
+          ctx.stroke();
         }
       }
       
