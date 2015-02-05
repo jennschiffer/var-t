@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" id="cassatt-demo">
+
+  <head>
+    <title>var t; //cassatt demo</title>
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+      * { margin: 0; padding: 0; }
+      body {  overflow: hidden; }
+      
+      #menu { position: absolute; top: 10px; right: 10px; text-align: right;font-family: Helvetica;  }
+      #menu a { text-decoration: none; color: black; font-weight: bold; font-size: 1.2em; }
+      #menu p { margin-bottom: 10px; }
+      #menu small { font-family: monospace; }
+      
+      #sketch-container { display: none; }
+    </style>
+  </head>
+
+  <body id="cassatt">
+
+  <p>
+    <label for="upload-image">upload an image</label>
+    <input type="file" id="upload-image" name="upload-image" />
+  </p>
+  
+  <div id="sketch-container">
+    <p>Draw on your image around the edges to give it a Cassatt oil sketch look!</p>
+    
+    <canvas id="sketch-canvas"></canvas>
+  </div>
+
+  <div id="menu"> 
+    
+    <div class="tray">
+    <p><a href="index.html">DE-SKETCHING CASSATT<br /> a <code>var t;</code> demo</a></p>
+    <p><small>upload an image<br />reverse the drawing process by...drawing<br /> <a href="index.html">learn about art</a></small></p>
+      <div>
+        <button class="clear">Clear</button>
+        <button class="save">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="jquery-2.1.1.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  $(function(){
+    
+    var $uploadInput = $('#upload-image');
+    var $sketchContainer = $('#sketch-container');
+    var $canvas = $('#sketch-canvas');
+    var ctx = $canvas[0].getContext('2d');
+    
+    // when uploading an image, embed it onto canvas and show it
+    $uploadInput.change(function(){
+      
+      // embed image onto canvas
+      console.log($uploadInput.val());
+      
+      // show sketch container
+      $sketchContainer.show();
+    });
+  });
+  </script>
+
+  <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
+<script type="text/javascript">try{ clicky.init(23165); }catch(e){}</script>
+<noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23165ns.gif" /></p></noscript>
+  </body>
+</html>
