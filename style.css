@@ -70,4 +70,12 @@ footer h3 { margin: .5em 0; }
 #matisse blockquote { padding: 5px; background-color: lightblue; font-style: italic; color: #000; }
 #matisse img { margin: 0 auto; }
 
-
+/* cassatt */
+#cassatt { background: url('cassatt/assets/sketch-child.jpg') fixed; }
+#cassatt header a { color: #fff; text-decoration: underline; }
+#cassatt header,
+#cassatt #copyright { background-color: #B32413; }
+#cassatt .hr { color: #B32413; font-size: 1.5em; }
+#cassatt blockquote { padding: 5px; background-color: #E0C2B8; font-style: italic; color: #000; }
+#cassatt img { margin: 0 auto; }
+#cassatt small { font-style: italic; font-size: .8em; }
