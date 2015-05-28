@@ -1,54 +1,23 @@
-<!doctype html>
-<html lang="en">
+---
+layout: home
+---
 
-  <head>
-    <title>var t;</title>
-    <meta charset="utf-8" />
-    <link href="http://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet" type="text/css" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="imports/vartists.html" rel="import" />
-  </head>
+<div class="home">
 
-  <body>
+  <article id="intro">
 
-    <header>  
-      /**<br />
-      * <h1>v<a href="/">ar t</a>;</h1><br />
-      * <h2>Learning about art, using JavaScript.</h2><br />
-      * <h3>@author <a href="http://jennmoney.biz">Jenn Schiffer</a></h3><br />
-      */
-    </header>
+    <h3>// I love art and code.</h3>
 
-    <article id="intro">
+    <p>I have spent a few years talking about and teaching programming to people as young as 8 and as old as 80. The one interest I've been able to map to all ages is art. Teaching people to code using art as a motivation has been a fun learning and teaching experience but, to be quite honest, I could learn a lot more from <em>both</em> subjects.</p>
 
-      <h3>// I love art and code.</h3>
+    <p><code>var t;</code> (pronounced "vart," which rhymes with "fart" because I am 12) is a writing, art, and code project that I started to teach me and you about art, as well as to create interactive works that may motivate art lovers to program their own stuff.</p>
 
-      <p>I have spent a few years talking about and teaching programming to people as young as 8 and as old as 80. The one interest I've been able to map to all ages is art. Teaching people to code using art as a motivation has been a fun learning and teaching experience but, to be quite honest, I could learn a lot more from <em>both</em> subjects.</p>
+    <p>In October of last year I launched this project with a generative <a href="/mondrian">Piet Mondrian</a> generator. I was absolutely <em>floored</em> with the positive responses from both programmers and artists. For the first time since I was a kid, I felt validated in making art as a software engineer, and others expressed the same feeling. The following months I went for a bit more ambitious and personal project with the surrealist <a href="/magritte">René Magritte</a>, and then explored the theme of imperfection with <a href="/matisse">Henri Matisse</a>. For this first post of 2015, I'm writing about an American woman named <a href="/cassatt">Mary Cassatt</a>, who broke through the male-dominated art world to become a famous Impressionist painter.</p>
 
-      <p><code>var t;</code> (pronounced "vart," which rhymes with "fart" because I am 12) is a writing, art, and code project that I started to teach me and you about art, as well as to create interactive works that may motivate art lovers to program their own stuff.</p>
+    <p>I hope you have as much fun reading, learning, and playing with art as much I did making it.</p>
 
-      <p>In October of last year I launched this project with a generative <a href="/mondrian">Piet Mondrian</a> generator. I was absolutely <em>floored</em> with the positive responses from both programmers and artists. For the first time since I was a kid, I felt validated in making art as a software engineer, and others expressed the same feeling. The following months I went for a bit more ambitious and personal project with the surrealist <a href="/magritte">René Magritte</a>, and then explored the theme of imperfection with <a href="/matisse">Henri Matisse</a>. For this first post of 2015, I'm writing about an American woman named <a href="/cassatt">Mary Cassatt</a>, who broke through the male-dominated art world to become a famous Impressionist painter.</p>
+    <p><em>xoxo j$</em></p>
 
-      <p>I hope you have as much fun reading, learning, and playing with art as much I did making it.</p>
+  </article>
 
-      <p><em>xoxo j$</em></p>
-
-    </article>
-
-    <!-- Include platform.js -->
-    <script src="bower_components/platform/platform.js"></script>
-
-    <!-- Listen for the HTMLImportsLoaded event -->
-    <script>
-      window.addEventListener('HTMLImportsLoaded', function() {
-        var link = document.querySelector('link[rel=import]');
-        var content = link.import.querySelector('footer');
-        document.body.appendChild(document.importNode(content, true));
-      });
-    </script>
-
-  <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
-<script type="text/javascript">try{ clicky.init(23165); }catch(e){}</script>
-<noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23165ns.gif" /></p></noscript>
-  </body>
-</html>
+</div>
