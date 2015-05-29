@@ -1,81 +1,305 @@
-/** var t; // stylesheet **/
+/** 
+* var t; // stylesheet 
+*/
 
 /* global */
-* { box-sizing: border-box; }
-body { background-color: #fff; margin: 0; padding: 20px; margin: 10px; font-family: 'Helvetica', Arial, sans-serif; width: 100%; max-width: 700px; font-size: 1.2em; }
-a { text-decoration: none; color: blue; }
-img { max-width: 100%; }
-.center { text-align: center; }
+* {
+	box-sizing: border-box;
+}
 
-header, h1, h2, h3, h4, h5, h6, blockquote { font-family: monospace; }
+body {
+	background-color: #FDF6E3;
+	padding: 10px;
+	margin: 0px auto;
+	font-family: 'Helvetica Neue',Arial,sans-serif;
+	width: 100%;
+	max-width: 800px;
+	font-size: 1.2em;
+	
+	a {
+  	text-decoration: none;
+  	color: #2591DA;
+  }
+  
+  img {
+  	max-width: 100%;
+  }
+  
+  .center {
+  	text-align: center;
+  }
+  
+  .image {
+  	text-align: center;
+  }
+  
+  .caption {
+  	font-size: .8em;
+  	color: #666;
+  	font-style: italic;
+  }
+  
+  .hr {
+  	text-align: center;
+  }
+  
+  .soon {
+  	opacity: .4;
+  }
+}
 
-header { font-size: 1.5em; margin: 0; background-color: hotpink; padding: 10px; }
-header h1,
-header h2,
-header h3 { display: inline; font-size: 1.4em; }
-header h2 { font-weight: normal; font-size: .9em; font-style: italic; }
-header h3 { font-size: .8em; font-weight: normal;}
-header em { font-style: normal; color: red; }
-header i { font-style: italic; color: gray; font-weight: normal; }
+header,h1,h2,h3,h4,h5,h6,blockquote {
+	font-family: monospace;
+}
 
-article { line-height: 1.5em; }
-article h3,
-nav h3 { font-size: 1.5em; }
+header {
+	font-size: 1.5em;
+	margin: 0;
+	background-color: #002A35;
+	padding: 30px;
+	color: #959EA5;
+  	
+  h1, h2, h3 {
+  	display: inline;
+  	font-size: 1.5em;
+  }
+  
+  h1 {
+    color: #8B9317;
+    
+    a {
+      color: #2AA895;
+    }
+  }
+  
+  h2 {
+  	font-weight: 400;
+  	font-size: .9em;
+  	font-style: italic;
+  }
+  
+  h3 {
+  	font-size: .8em;
+  	font-weight: 400;
+  	
+  	a {
+    	color: #B52F2F;
+  	}
+  }
+  
+  em {
+  	font-style: normal;
+  	color: red;
+  }
+  
+  i {
+  	font-style: italic;
+  	color: gray;
+  	font-weight: 400;
+  }
+}
 
-footer #vartists { border: 5px solid black; padding: 10px; margin: 40px 0; }
-footer h3 { margin: .5em 0; }
+article {
+	line-height: 1.5em;
+	
+	h3 {
+  	font-size: 1.5em;
+	}
+}
 
-.image { text-align: center; }
-.caption { font-size: .8em; color: #666; font-style: italic; }
-.hr { text-align: center; }
+footer {
+  .table-of-contents {
+  	padding: 10px;
+  	margin: 40px 0;
+  	background-color: #9B8007;
+  	
+  	a {
+    	color: #fff;
+  	}
+  	
+    li {
+    	margin: 1em 0;
+    }
+    
+    .date {
+      font-style: italic;
+    }
+  }
+  
+  h3 {
+  	margin: .5em 0;
+  }
+  
+  #about {
+  	font-style: italic;
+  }
+  
+  #copyright {
+  	font-size: .8em;
+  	margin: 30px auto 10px;
+  	padding: 5px 10px;
+  	background-color: #B52F2F;
+  	text-align: center;
+  	
+  	a {
+    	color: #fff;
+    	display: inline-block;
+    	margin: 0 10px;
+  	}
+  }
+}
 
-#about { font-style: italic; }
-#vartists li { margin: 1em 0; }
 
-#copyright { font-size: .6em; padding: 5px 10px; background-color: #ccc; }
-#copyright a { color: #fff; }
 
-.soon { opacity: .4; }
+
 
 /* mondrian */
-#mondrian { background: url('mondrian/Mondrian_Comp10.jpg') fixed; }
-#mondrian header a { color: #000; text-decoration: underline; }
-#mondrian header,
-#mondrian #copyright { background-color: yellow; }
-.hr { color: red; font-size: 1.5em; }
-#mondrian #copyright { background-color: red; }
-#mondrian blockquote { padding: 5px; background-color: blue; font-style: italic; color: white; }
+#mondrian {
+	background: url(mondrian/Mondrian_Comp10.jpg) fixed;
+}
+
+#mondrian header a {
+	color: #000;
+	text-decoration: underline;
+}
+
+#mondrian header,#mondrian #copyright {
+	background-color: #ff0;
+}
+
+.hr {
+	color: red;
+	font-size: 1.5em;
+}
+
+#mondrian #copyright {
+	background-color: red;
+}
+
+#mondrian blockquote {
+	padding: 5px;
+	background-color: blue;
+	font-style: italic;
+	color: #fff;
+}
 
 /* magritte */
-#magritte { background: url('magritte/assets/sky.png') fixed; }
-#magritte header a { color: #000; text-decoration: underline; }
-#magritte header, 
-#magritte #copyright { background-color: #B3A6A0; }
-#magritte .hr { color: #B3A6A0; font-size: 1.5em; }
-#magritte #copyright { background-color: #B3A6A0; }
-#magritte blockquote { padding: 5px; background-color: lightblue; font-style: italic; color: #000; }
-#magritte .caption { font-size: .8em; color: #666; }
-#magritte img { margin: 0 auto; }
-#magritte-demo { background: url('magritte/assets/sky.png') fixed;}
-#magritte-demo header { margin-bottom: 50px; background-color: #fff; }
-#magritte-demo #copyright {background-color: #fff; }
+#magritte {
+	background: url(magritte/assets/sky.png) fixed;
+}
+
+#magritte header a {
+	color: #000;
+	text-decoration: underline;
+}
+
+#magritte header,#magritte #copyright {
+	background-color: #B3A6A0;
+}
+
+#magritte .hr {
+	color: #B3A6A0;
+	font-size: 1.5em;
+}
+
+#magritte #copyright {
+	background-color: #B3A6A0;
+}
+
+#magritte blockquote {
+	padding: 5px;
+	background-color: #add8e6;
+	font-style: italic;
+	color: #000;
+}
+
+#magritte .caption {
+	font-size: .8em;
+	color: #666;
+}
+
+#magritte img {
+	margin: 0 auto;
+}
+
+#magritte-demo {
+	background: url(magritte/assets/sky.png) fixed;
+}
+
+#magritte-demo header {
+	margin-bottom: 50px;
+	background-color: #fff;
+}
+
+#magritte-demo #copyright {
+	background-color: #fff;
+}
 
 /* matisse */
-#matisse { background: url('matisse/assets/bleue.jpg') fixed; }
-#matisse header a { color: #fff; text-decoration: underline; }
-#matisse header, 
-#matisse #copyright { background-color: #3E5DAD; }
-#matisse .hr { color: #3E5DAD; font-size: 1.5em; }
-#matisse #copyright { background-color: #3E5DAD; }
-#matisse blockquote { padding: 5px; background-color: lightblue; font-style: italic; color: #000; }
-#matisse img { margin: 0 auto; }
+#matisse {
+	background: url(matisse/assets/bleue.jpg) fixed;
+}
+
+#matisse header a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#matisse header,#matisse #copyright {
+	background-color: #3E5DAD;
+}
+
+#matisse .hr {
+	color: #3E5DAD;
+	font-size: 1.5em;
+}
+
+#matisse #copyright {
+	background-color: #3E5DAD;
+}
+
+#matisse blockquote {
+	padding: 5px;
+	background-color: #add8e6;
+	font-style: italic;
+	color: #000;
+}
+
+#matisse img {
+	margin: 0 auto;
+}
 
 /* cassatt */
-#cassatt { background: url('cassatt/assets/sketch-child.jpg') fixed; }
-#cassatt header a { color: #fff; text-decoration: underline; }
-#cassatt header,
-#cassatt #copyright { background-color: #B32413; }
-#cassatt .hr { color: #B32413; font-size: 1.5em; }
-#cassatt blockquote { padding: 5px; background-color: #E0C2B8; font-style: italic; color: #000; }
-#cassatt img { margin: 0 auto; }
-#cassatt small { font-style: italic; font-size: .8em; }
+#cassatt {
+	background: url(cassatt/assets/sketch-child.jpg) fixed;
+}
+
+#cassatt header a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#cassatt header,#cassatt #copyright {
+	background-color: #B32413;
+}
+
+#cassatt .hr {
+	color: #B32413;
+	font-size: 1.5em;
+}
+
+#cassatt blockquote {
+	padding: 5px;
+	background-color: #E0C2B8;
+	font-style: italic;
+	color: #000;
+}
+
+#cassatt img {
+	margin: 0 auto;
+}
+
+#cassatt small {
+	font-style: italic;
+	font-size: .8em;
+}

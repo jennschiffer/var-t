@@ -1,0 +1,9 @@
+---
+layout: post
+permalink: /magritte/index.html
+title:  "René Magritte"
+date:   2014-10-16
+categories: vartist story magritte
+---
+
+Magritte post here.

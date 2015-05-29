@@ -1,0 +1,9 @@
+---
+layout: post
+permalink: /cassatt/index.html
+title:  "Mary Cassatt"
+date:   2015-02-20
+categories: vartist story cassatt
+---
+
+Cassatt post here.

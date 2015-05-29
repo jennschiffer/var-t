@@ -1,0 +1,9 @@
+---
+layout: post
+permalink: /mondrian/index.html
+title:  "Piet Mondrian"
+date:   2014-09-22
+categories: vartist story mondrian
+---
+
+Mondrian post here.

@@ -1,27 +1,20 @@
    <footer>
 
-    <div id="vartists">
+    <div class="table-of-contents">
       <h3>// (v)artists</h3>
   
       <ol>
-        <!--<li><a href="/mondrian/index.html">Piet Mondrian</a> <span class="date">Sept. 22, 2014</span></li>
-        <li><a href="/magritte/index.html">René Magritte</a> <span class="date">Oct. 16, 2014</span></li>
-        <li><a href="/matisse/index.html">Henri Matisse</a> <span class="date">Nov. 12, 2014</span></li>
-        <li><a href="/cassatt/index.html">Mary Cassatt</a> <span class="date">Feb. 20, 2015</span></li>
-        <li class="soon">Coming Soon: tba (that's "to be announced" - not an artist)</li>-->
-          {% for post in site.posts %}
-            <li>
-              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> 
-              <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
-            </li>
-          {% endfor %}
+        {% for post in site.posts %}
+          <li>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> &bull; 
+            <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+          </li>
+        {% endfor %}
       </ol> 
     </div>
-  
-    <p class="hr">* * *</p>
-  
+    
     <div id="about">
-      <p><a href="{{ site.website }}">Jenn</a> is an open web engineer at <a href="http://bocoup.com">Bocoup</a> and spends her free time enjoying and creating art, enjoying and creating code, writing satire, and getting yelled at on the Internet. The best way to communicate with her, be it to suggest a future (v)artist or just say hi, is to tweet <a href="http://twitter.com/jennschiffer">@jennschiffer</a>.</p>
+      <p><a href="{{ site.website }}">{{ site.author }}</a> is an open web engineer at <a href="http://bocoup.com">Bocoup</a> and spends her free time enjoying and creating art, enjoying and creating code, writing satire, and getting yelled at on the Internet. The best way to communicate with her, be it to suggest a future (v)artist or just say hi, is to tweet <a href="http://twitter.com/jennschiffer">@jennschiffer</a> or email her at {{ site.email }}.</p>
     </div>
   
     <div id="copyright"><a href="{{ site.website }}">&copy; {{ site.copyright }} {{ site.author }}</a> &bull; <a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe via RSS</a> &bull; <a href="{{ site.repo }}">view the source on github</a></div>
