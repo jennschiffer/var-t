@@ -133,7 +133,6 @@ article {
 footer {
   .table-of-contents {
   	padding: 10px;
-  	margin: 40px 0;
   	background-color: #9B8007;
   	
   	a {
@@ -155,6 +154,15 @@ footer {
   
   #about {
   	font-style: italic;
+  }
+  
+  #press {
+    background-color: #2AA895;
+    padding: 10px;
+    
+    a {
+      color: #fff;
+    }
   }
   
   #copyright {
