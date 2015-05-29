@@ -1,0 +1,62 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style type="text/css">
+    body { background: #527FB8; margin: 0; padding: 20px 0; }
+    #module { width: 100%; height: 200px; position: relative; overflow: hidden; }
+
+
+    @-webkit-keyframes moveclouds {
+      0% {margin-left: 200px;}
+      100% {margin-left: -200px;}
+    }
+    @-moz-keyframes moveclouds {
+      0% {margin-left: 200px;}
+      100% {margin-left: -200px;}
+    }
+
+    .cloud { position: absolute; opacity: .7;
+      -webkit-animation: moveclouds 20s linear infinite; 
+      -moz-animation:  moveclouds 20s linear infinite; 
+      animation: moveclouds 20s linear infinite;
+    }
+
+    .second { top: 40px; left: 80px; opacity: 1;
+      -webkit-animation: moveclouds 10s linear infinite; 
+      -moz-animation:  moveclouds 10s linear infinite; 
+      animation: moveclouds 10s linear infinite;
+    }
+
+    .third { top: 60px; left: 50px; opacity: .9;
+      -webkit-animation: moveclouds 15s linear infinite; 
+      -moz-animation:  moveclouds 15s linear infinite; 
+      animation: moveclouds 15s linear infinite;
+    }
+
+    .fluff { position: absolute; width: 50px; height:50px; background: #fff; -moz-border-radius: 50px; -webkit-border-radius: 50px; border-radius: 50px; }
+    ˆ
+    .fluff:first-child { left: 30px; top: 0px; }
+    .fluff:nth-child(2) { width: 100px; left: -10px; top: 15px; }
+    .fluff:nth-child(3) { width:60px; height: 60px; left: 15px; top: 10px; }
+  </style>
+</head>
+<body>
+  <div id="module">
+    <div class="cloud first"> 
+      <div class="fluff"></div>
+      <div class="fluff"></div>
+      <div class="fluff"></div>
+    </div>
+    <div class="cloud second"> 
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+    </div>
+    <div class="cloud third"> 
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+        <div class="fluff"></div>
+    </div>
+  </div>
+</body>
+</html>

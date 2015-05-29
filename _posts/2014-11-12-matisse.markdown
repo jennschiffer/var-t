@@ -1,0 +1,88 @@
+---
+layout: post
+permalink: /matisse/index.html
+title:  "Henri Matisse"
+date:   2014-11-12
+categories: vartist story matisse
+---
+
+<h3 class="title">// Henri Matisse <a href="demo.html">[demo]</a></h3>
+
+<blockquote>"Creativity takes courage." - Henri Matisse</blockquote>
+
+<p>In 1989, a woman my Kindergarten classmates and I were told to call "Mrs. Kotter" gave me an N in "using scissors" on my report card – the N stood for "needs improvement." It was so traumatic for me that the memory of my then-stepmother making me practice holding scissors "the right way" and cutting tons and tons of paper still feels fresh in my mind today. Much like meritocracy, time, and gravity, the definition of how to properly hold a pair of scissors is a social construct that has plagued me over the past near-three decades of my being alive. Henri Matisse, a well-known French artist of numerous media, saved the scissors for his final years of living.</p>
+
+<p>Many folks are familiar with Matisse and his mix of impressionist art with deep and almost surreal hues. He was a leader of the Fauvism movement in the early 1900s, which was characterized by such use of strong color. His work to me is not only stunningly beautiful, but he managed to be bold without the campiness that we see in pop art using similar color schemes.</p>
+
+<p><img src="/assets/matisse/womanwithahat.jpg" /><br /><em>La femme au chapeau (Woman With A Hat), 1905</em></p>
+      
+<p>My first in-person encounter with Matisse's artwork was the painting <em>La Danse</em> in the Museum of Modern Art in New York City. It was a study piece for a more detailed version he painted the following year. He continued to use similar artistic representations of the human body in other paintings, sculpture, and, in the final post-war years of his life, paper.</p>
+
+<p><img src="/assets/matisse/ladanse.jpg" /><br /><em>La Danse (I), 1909</em></p>
+
+<p>World War II was a particularly difficult time for Matisse, as with most everyone. His only daughter, Margueritte, was imprisoned and tortured by the Gestapo for working in the French Resistance, yet managed to escape from the train transporting her to a concentration camp (she lived until the early 1980s, not too long before my embarrassing report card). Matisse, himself, had fallen ill with cancer and was left wheelchair-ridden from surgery. Instead of ending his prolific life and career of art, though, he had a rebirth in creativity and took to paper cut-outs as a medium.</p>
+
+<p>For the last several years of his life, Matisse "painted with scissors," using paper cut-outs in the same bold colors he painted with in previous decades to create similar works – the bodies reminiscent of <em>La Danse</em> can be seen in some pieces, particular his series of blue nudes. The size of his cut-outs ranged from small, like a book of jazz-inspired art and writing, to so large it takes a whole room to show just that piece. He even took some of these cut-out works and recreated them as beautiful stained glass windows.</p>
+
+<p>My latest in-person encounter with his work was also at the MoMA, only just a few weeks ago and for a new special exhibit, <a href="http://moma.org/matisse">Henri Matisse: The Cut-outs</a>. It is really a sight to see, although I suggest you do not make the same mistake as I did by going on a weekend when everyone else in the world seemed to go. The piece I found most interesting and beautiful, and what drew me to this time period of Matisse's work, was <em><a href="http://www.moma.org/interactives/exhibitions/2014/matisse/the-swimming-pool.html">The Swimming Pool</a></em>, which went through a very ambitious restoration after several years of not being available to the public because of paper staining and degradation.</p>
+
+<object width="560" height="315"><param name="movie" value="//www.youtube.com/v/-rke7RmxwfY?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/-rke7RmxwfY?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>   
+
+<p>Much like my 4-year-old self, Matisse was no perfectionist when it came to scissor work. When looking closely at some of these collages, in plain sight you can see the pencil lines, the sharp turns, and some fringes in the paper. This can be attributed to Matisse's assistants who helped out in the cutting, or just to the fact that much like paint splatter or pencil leads breaking, the shearing of paper is not all too predictable or always perfect (<em>are you listening, Mrs. Kotter?</em>). The same can be said for JavaScript.</p>
+
+<p>In this installation of <a href="http://vart.institute">vart.institute</a>, I did not make generative paper cut-outs. Instead, I built a web app so we can make our own unique cut-out-esque work.</p>
+  
+<p class="hr">&sext; &sext; &sext;</p>
+
+<h3>The Canvas</h3>
+
+<p>I wanted to have a canvas that spans the full window of my digital space. I decided to use an HTML5 canvas to create this, and make the entire browser window a space where I can create these cut-outs. A lot of this I learned from making <a href="http://make8bitart.com">make8bitart.com</a>.</p>
+  
+<p data-height="400" data-theme-id="9292" data-slug-hash="1e5e016d919f3870180b57152f2fc308" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/1e5e016d919f3870180b57152f2fc308/'>Cutting Out Matisse - Part 1</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p>I gave the canvas a pink background temporarily, just to test that it covers the whole window.</p>
+
+<h3>The Paper</h3>
+
+<p>Instead of using scissors, which I already have outed myself as a terrible user of, the app allows us draw our cut-outs, but in a painstaking manner which slightly matches the movements of scissor cutting: just clicking the path. When working with an HTML5 canvas, we can set click events and draw paths, close paths, and fill those paths with a set color.</p>
+
+<p>We start with an empty array and a color (a blue matching Matisse's series of blue nudes), then as we click around to create a shape, we save those coordinates to save the number of clicks and retain the first point and the latest point. We need to eventually close our path, so when our latest click is within several pixels of the first point of our shape, we close the path and fill it with color.</p>
+  
+<p data-height="400" data-theme-id="9292" data-slug-hash="ba2eb79a74070b73e0e54cf63429fbe0" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/ba2eb79a74070b73e0e54cf63429fbe0/'>Cutting Out Matisse - Part 2</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.
+
+<p>To make our cut-outs seem more paper-like, I added a darker stroke so "layered" paper can be seen, and also played around with the colors of the canvas and paper to make them look less sterile.</p>
+
+<p data-height="400" data-theme-id="9292" data-slug-hash="a776995a81bb9ff2a40272668ddff366" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/a776995a81bb9ff2a40272668ddff366/'>Cutting Out Matisse - Part 3</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p>Go ahead, click around and make some cut-outs!</p>
+
+<h3>The Tools</h3>
+
+<p>Two of the most important parts of creating art is either saving it for posterity or throwing it in the trash, never to be seen again. I added a small menu at the top of the canvas that allows us to clear the canvas or open a png format of the canvas in a new tab/window. Anyone can then save their work!</p>
+
+<p data-height="400" data-theme-id="9292" data-slug-hash="f3c30e979f01d7a2d1b49a29c28a1f11" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/f3c30e979f01d7a2d1b49a29c28a1f11/'>Cutting Out Matisse - Part 4</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<h3>The Colors</h3>
+
+<p>While we have a menu, I figured we might as well use it to give some color options. I chose a selection of colors based off of other collages Matisse created, and added color squares with click events that change our cut-outs color. Since we do not want to change colors while we are in the midst of drawing, and because we don't want to lose precious cutting space to buttons, I have the menu hide between the first click of a path and the closing of it.</p>
+
+<p>And that leaves us with our final product...</p>
+  
+<h3><em><a href="demo.html">Cutting Out Matisse</a></em></h3>
+      
+<p data-height="500" data-theme-id="9292" data-slug-hash="1ed4ae2db57e142f544cab76d6d50051" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/1ed4ae2db57e142f544cab76d6d50051/'>Cutting Out Matisse - Part 5</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p><a href="demo.html">You can find the full page demo here!</a></p>
+
+<p class="hr">&sext; &sext; &sext;</p>
+
+<p>One of the biggest takeaways I have had from this project so far, specifically my studying of Matisse, is that imperfections due to the medium we are working with only add to the intellectual value of a piece of art. When I look at all the code I've written for these past three vart posts, I see the imperfections of how I made my own art with code and the parallels bring me great comfort. I feel like it gives me a thicker skin when irrelevant people nitpick my work, knowing now that my code is my art and that affords me an artistic license. Also, fuck the haters, right?</p>
+
+<p>Sources:
+  <ul>
+    <li><a href="http://en.wikipedia.org/wiki/Henri_Matisse">Wikipedia</a></li>
+    <li><a href="http://www.baltimoresun.com/entertainment/arts/artsmash/bs-ae-arts-story-0920-20130919-story.html">"One woman's life, as depicted by her dad" Baltimore Sun</a></li>
+    <li><a href="http://www.moma.org/interactives/exhibitions/2014/matisse/the-swimming-pool.html">MoMA's restoration of The Swimming Pool</a></li>
+    <li><a href="http://moma.org/matisse">MoMA's <em>Henri Matisse: The Cut-outs</em> exhibit, open until 2/8/2015</a></li>
+</ul>
+</p>

@@ -1,0 +1,17 @@
+# Site settings
+name: vart
+title: var t;
+description: > 
+  Learning about art, using JavaScript.
+baseurl: ""
+url: http://vart.institute
+repo: http://github.com/jennschiffer/vart
+copyright: 2015
+
+# Jenn settings
+author: Jenn Schiffer
+email: jenn@dotbiz.info
+website: http://jennmoney.biz
+
+# Build settings
+markdown: kramdown
