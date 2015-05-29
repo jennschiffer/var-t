@@ -1,11 +1,9 @@
-<!doctype html>
-<html lang="en" id="cassatt-demo">
+<!DOCTYPE html>
+<html>
 
-<head>
-  <title>var t; //cassatt demo</title>
-  <meta charset="utf-8" />
+  {% include head-demo.html %}
 
-  <style type="text/css">
+   <style type="text/css">
     body { font-family: Helvetica; padding: 1em; }
     
     #container p { margin: 0 0 2em; }
@@ -22,9 +20,6 @@
     button.in-use { background-color: lime; border-color: lime; }
     
     .hide { display: none; }
-    
-     /* jquk demo */
-      header { display: none; }
   </style>
 </head>
 
@@ -47,7 +42,7 @@
   
     <div class="tray">
       <p><a href="index.html">DE-SKETCHING CASSATT<br /> a <code>var t;</code> demo</a></p>
-      <p><small>upload an image<br />make it an art<br /><a href="index.html">learn about mary cassatt</a></small></p>
+      <p><small>upload an image<br />make it an art<br /><a href="index.html">[learn about mary cassatt]</a></small></p>
       <div id="sketch-tools">
         <button class="clear">Clear</button>
         <button class="save">Save</button> <br />
@@ -57,7 +52,7 @@
     </div>
   </div>
 
-  <script src="jquery-2.1.1.min.js" type="text/javascript"></script>
+  <script src="/assets/js/jquery-2.1.1.min.js" type="text/javascript"></script>
   <script type="text/javascript">
   $(function(){
   
@@ -187,11 +182,11 @@
     };
   
   });
+  </script>  
+        
+    <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
+    <script type="text/javascript">try{ clicky.init(23165); }catch(e){}</script>
+    <noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23165ns.gif" /></p></noscript>
+  </body>
 
-  </script>
-  
-  <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
-<script type="text/javascript">try{ clicky.init(23165); }catch(e){}</script>
-<noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23165ns.gif" /></p></noscript>
-</body>
 </html>

@@ -2,9 +2,9 @@
 
     <div class="table-of-contents">
       <h3>// (v)artists</h3>
-  
+      
       <ol>
-        {% for post in site.posts %}
+        {% for post in site.categories["story"] reversed %}
           <li>
             <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> &bull; 
             <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
@@ -14,16 +14,10 @@
     </div>
     
     <div id="about">
-      <p><a href="{{ site.website }}">{{ site.author }}</a> is an open web engineer at <a href="http://bocoup.com">Bocoup</a> and spends her free time enjoying and creating art, enjoying and creating code, writing satire, and getting yelled at on the Internet. The best way to communicate with her, be it to suggest a future (v)artist or just say hi, is to tweet <a href="http://twitter.com/jennschiffer">@jennschiffer</a> or email her at {{ site.email }}.</p>
+      <p><a href="{{ site.website }}">{{ site.author }}</a> is an open web engineer at <a href="http://bocoup.com">Bocoup</a> and spends her free time enjoying and creating art, enjoying and creating code, writing satire, and getting yelled at on the Internet. If you are nice, you can tweet her at <a href="http://twitter.com/jennschiffer">@jennschiffer</a> or email her at {{ site.email }}.</p>
     </div>
   
     <div id="copyright"><a href="{{ site.website }}">&copy; {{ site.copyright }} {{ site.author }}</a> &bull; <a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe via RSS</a> &bull; <a href="{{ site.repo }}">view the source on github</a></div>
   
   </footer>
-
-
-  <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
-<script type="text/javascript">try{ clicky.init(23165); }catch(e){}</script>
-<noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23165ns.gif" /></p></noscript>
-  </body>
-</html>
+  

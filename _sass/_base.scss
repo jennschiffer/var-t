@@ -7,6 +7,10 @@
 	box-sizing: border-box;
 }
 
+html {
+  background-color: #FDF6E3;
+}
+
 body {
 	background-color: #FDF6E3;
 	padding: 10px;
@@ -33,14 +37,24 @@ body {
   	text-align: center;
   }
   
+  blockquote {
+    font-size: 2.5em;
+    line-height: 1em;
+    margin: 1em;
+  }
+  
   .caption {
   	font-size: .8em;
   	color: #666;
   	font-style: italic;
+  	margin: 0 0 40px;
+  	padding: 0;
+  	line-height: 0;
   }
   
   .hr {
   	text-align: center;
+  	font-size: 2em;
   }
   
   .soon {
@@ -103,7 +117,16 @@ article {
 	line-height: 1.5em;
 	
 	h3 {
-  	font-size: 1.5em;
+  	font-size: 2em;
+  	
+    &.title {
+    	background-color: #8B9317;
+    	padding: 25px;
+    	
+    	a {
+      	color: #fff;
+    	}
+  	}
 	}
 }
 
@@ -165,11 +188,6 @@ footer {
 
 #mondrian header,#mondrian #copyright {
 	background-color: #ff0;
-}
-
-.hr {
-	color: red;
-	font-size: 1.5em;
 }
 
 #mondrian #copyright {

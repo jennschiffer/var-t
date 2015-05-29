@@ -1,9 +1,101 @@
 ---
 layout: post
 permalink: /mondrian/index.html
+demolink: /mondrian/demo.html
 title:  "Piet Mondrian"
 date:   2014-09-22
 categories: vartist story mondrian
 ---
 
-Mondrian post here.
+<h3 class="title">// Piet Mondrian <a href="demo.html">[demo]</a></h3>
+
+<blockquote>"Art is not made for anybody and is, at the same time, for everybody." - Piet Mondrian</blockquote>
+
+<p>I started with Mondrian not because he is my favorite artist (he is not), or that his work is very recognizeable (it is), but because I thought it would be a fun (yes) and easy start (lol nope) to this project.</p>
+
+<p>Mondrian was a Dutch painter who changed his name in 1906 from <em>Pieter Cornelis Mondriaan</em> as sort of a personal rebranding when he left the Netherlands for Paris. A man with as bad luck as the rest of us schmucks, he went back to the Netherlands to visit and ended up stuck there because of World War I (thanks Obama). He was able to go back to Paris in 1918, which seems to be when he changed his style from Post-Impressionist to the more abstract and grid-based work he is known for today.</p>
+
+<p class="image">
+  <img src="/assets/mondrian/Mondrian_CompRYB.jpg" alt="Mondrian Painting" title="Composition with Yellow, Blue, and Red, 1937–42, oil on canvas, 72.5 × 69 cm, Tate Gallery, London" /><br />
+  <span class="caption">Composition with Yellow, Blue, and Red, 1937–42, oil on canvas, 72.5 × 69 cm, Tate Gallery, London</span>
+</p>
+
+<p>His work from this time is categorized as part of the <a href="http://en.wikipedia.org/wiki/De_Stijl">De Stijl</a> movement. Also known as "neoplasticism," the style (literally the direct translation of "De Stijl") originated in Amsterdam shortly before he went back to Paris.</p>
+
+<p>His evolution, from the traditional representation of objects in his older paintings to the very abstract use of just lines and rectangles to represent everything, paralleled his ideas that art is a spiritual representation of nature and that abstraction provides a common language for anyone to enjoy and understand art. And enjoy and understand people did and continue to do, as well as <a href="https://www.google.com/search?q=mondrian+inspired&hs=AH6&channel=sb&source=lnms&tbm=isch&sa=X&ei=1y8gVIfrEcuryATOkwI&ved=0CAgQ_AUoAQ&biw=1280&bih=695">commodify, copy, and monetize</a>.</p>
+
+<p>Mondrian found his way to Manhattan, New York, for the last years of his life, which was ended by pneumonia. Fun fact to make this all about me: I almost died of pneumonia in New York.</p>
+
+<p class="hr">&sext; &sext; &sext;</p>
+
+<p>I am quite fond of grids and tables and also primary colors, and Mondrian's very recognizable post-WWI work always catches my eye from afar in exhibits, so I decided to program his style of art generatively – that is, every time you run the code, you get a different "painting" thanks to the use of randomly generated variables. Hot off the heels of speaking about html tables at <a href="https://www.youtube.com/watch?v=saP_G9NyBOI&index=14&list=PL-0yjdC10QYpmXI3l-PGK1od4kTWOjm_A">jQuery Conference Chicago</a>, I decided to build this with tables.</p>
+
+<p>The specific piece I used as my muse was Composition #10:</p>
+
+<p class="image">
+  <img src="/assets/mondrian/Mondrian_Comp10.jpg" alt="Mondrian Painting" title="Composition No. 10. 1939-42. Piet Mondrian. Oil on canvas. 80 x 73 cm. Private collection." /><br />
+  <span class="caption">Composition No. 10. 1939-42. Piet Mondrian. Oil on canvas. 80 x 73 cm. Private collection.</span>
+</p>
+
+<p>The fact that this painting is part of a private collection is astounding. Imagine just owning one of your own. Where would you even hang it? I haven't even finished hanging up all of my art, which are mostly band posters. Anyway, here is my skewed crayon version of Composition #10:</p>
+
+<p class="image">
+  <img src="/assets/mondrian/jenndrian_comp10.jpg" alt="Mondrian Crayon Rendition" title="I drew this with crayon lol." /><br />
+  <span class="caption">Black outlines, primary colors, pretty Mondrian-ish I guess.</span>
+</p>
+
+<p>I use pen/crayon and paper to plan out and write algorithms before I type it out; it's just easier for me to think that way. Once I drew out the composition, I was able to figure out some aspects to the tables and tables within it, as well as the random cells of color. Here is my "hard-coded" HTML and CSS version of Composition #10:</p>
+
+<p data-height="570" data-theme-id="8678" data-slug-hash="1c831cef61ffa371e507b91bab229771" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/1c831cef61ffa371e507b91bab229771/'>Mondrian's Composition #10 (ish)</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p>There were a few aspects of this painting that I decided to take into consideration with JavaScripting Mondrian as I was manually building it in HTML:</p>
+
+<ul>
+  <li>there are nested tables, but not for every cell #notallcells</li>
+  <li>some cells have background colors [red, blue, yellow]</li>
+  <li>some rows have different heights</li>
+  <li>some cells have different widths</li>
+  <li>the occurrence of the above characteristics are rare, and become even more rare as you go deeper into the nests</li>
+</ul>
+  
+<p>If things are nested, that is usually my cue to use recursion. In this case, it would be a weighted recursion, where the chance of continuing decreases dramatically each time. Composition #10 nests, at most, three levels. Also, the percentage of top-level cells having nesting is already pretty low, so the weight should start out as such.</p>
+
+<p>I figure that I'd start with a 20% chance of a cell having a table inside it, and then depreciate that rate with each recursive call. I also want to be able to set the min and max number of rows and columns in each recursive call, since each nest level typically has fewer and fewer columns and rows.</p>
+
+<p>Here is the initial code, which just generates the frame table and generatively paints our nested grid. Hover over the painting and click "RERUN" on the lower-right of the codepen to generate a new piece.</p>
+
+<p data-height="570" data-theme-id="8678" data-slug-hash="ba31b1d7760ebeb5e83093190376070b" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/ba31b1d7760ebeb5e83093190376070b/'>JavaScripting Mondrian Pt. 1</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p><strong>And, yeah, I use jQuery. Sorry not sorry, h8rs – Mondrian isn't the *only* cool kid who can use abstraction.</strong></p>
+
+<p>I thought the table generation would be the hard part, but actually it turns out the random styling of the cells got pretty tricky. Each cell is likely to have a non-white background. Also I randomly resized each row of the base/frame table.</p>
+
+<p data-height="570" data-theme-id="8678" data-slug-hash="f6118ae510c78e4c34d1cea700496f74" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/f6118ae510c78e4c34d1cea700496f74/'>JavaScripting Mondrian Pt. 2</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p>At this point, I was having a hard time figuring out the borders for the nested tables. In his paintings, sometimes there are no borders, sometimes they are thicker than the rest of the painting. It took me a nap to realize that I should remove the border from cells that have a nested table. I love naps.</p>
+
+<p data-height="570" data-theme-id="8678" data-slug-hash="9abab0f366cf961c32004f02e738bc95" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/9abab0f366cf961c32004f02e738bc95/'>JavaScripting Mondrian Pt. 3</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p>So, yeah, it still needs some more tweaking to get it *just right* but there you go – a generative Mondrian composition generator, written in JavaScript. <a href="demo.html">You can check out a non-codepen demo showing a bunch of paintings all at once here.</a></p>
+
+<p>It's also worth noting that other programmers have taken note of Mondrian's work. Last week I was at a bar telling my pal <a href="https://twitter.com/steveklabnik">Steve Klabnik</a> about this project, and he brought to my attention there are actual programming languages inspired by and/or named after Mondrian. See the "Related and worth checking out" links below.</p>
+
+<p class="hr">&sext; &sext; &sext;</p>
+
+<p>We tend to forget that our brain is basically a computer – it too uses/generates electricity. Watching my own progress in programming art that Mondrian did on his own with tangible media has definitely increased my awareness of the parallels between art created "in real life" and art created from inside a machine. Mondrian kind of had a computer all along, he just didn't have to deal with Firefox Aurora crashing because there were too many IRCCloud tabs open. I'd take a million browser crashes over getting pneumonia again, though.</p>
+
+<p>Sources:
+  <ul>
+    <li><a href="http://en.wikipedia.org/wiki/Piet_Mondrian">wikipedia</a></li>
+    <li><a href="http://www.theartstory.org/artist-mondrian-piet.htm">theartstory.org</a></li>
+    <li><a href="http://www.moma.org/collection/artist.php?artist_id=4057">MoMA</a></li>
+</ul>
+</p>
+
+<p>Related and worth checking out:
+  <ul>
+    <li><a href="http://www.dangermouse.net/esoteric/piet.html">piet programming language</a></li>
+    <li><a href="http://www.bertnase.de/npiet/">npiet, an interpreter for piet</a></li>
+    <li><a href="http://www.theusrus.de/Mondrian/">mondrian programming language</a></li>
+  </ul>
+</p>

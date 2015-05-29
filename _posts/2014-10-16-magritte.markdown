@@ -6,4 +6,88 @@ date:   2014-10-16
 categories: vartist story magritte
 ---
 
-Magritte post here.
+<h3 class="title">// René Magritte <a href="demo.html">[demo]</a></h3>
+
+<blockquote>"The Surreal is but reality that has not been disconnected from its mystery." - René Magritte</blockquote>
+
+<p>I once told my grandma that I was being picked on for "being weird." She responded with "we are <em>all</em> fucking weird. But you are great, too," as she put <a href="http://open.spotify.com/track/15ob9SMGLWrexuPuyuMjKl">Laura Branigan's "Gloria"</a> on the record player and then sang and danced, drunk on cheap white wine. I still am not sure if she meant my <em>family</em> was all weird or just everyone in general was, but it is something I think about a lot. It was one of the most vivid moments of my life.</p>
+
+<p>In fact, it was all I could think about after a recent visit to the <a href="http://www.artic.edu/exhibition/magritte-mystery-ordinary-1926-1938">Chicago Art Institute's René Magritte exhibit</a>. About a quarter of the way through it, an elderly woman leaned towards me and said "these are all fucking weird, huh?" She looked nothing like my grandma, but she had that same cigarette-raspy voice, and it sent chills down my spine. I forced a short and quiet "ha" to be polite and then speed-walked through the rest of the exhibit as fast as I could without looking like I was in a panic.<p>
+
+<p>Two days later, I went back to do another walk-through of the exhibit, avoiding eye contact with basically anyone – a tactic I use every day, not just on days after I have been legitimately freaked out by an innocent, sassy, old woman. I already had the idea of <code>var t;</code> in my head and had written much of the Mondrian post, but I knew then and there that I would do Magritte. So here I am, rock you like a hurricane.</p>
+
+<p>René Magritte, much like my grandma, was a beloved weirdo who we do not have the pleasure of being in the presence of today, because unfortunately even the most brilliant and/or beloved people of our lives must leave us at some point. Magritte was one of the pioneers of the surrealist movement of the 1920s and 1930s. He lived primarily in Belgium, save a few brief years in Paris. He is one of my favorite artists not only for his surrealism, but for his reuse in different elements of his paintings. Those who study art might call them "recurring themes," but "reuse" makes more sense to me as an engineer. Those of us who write code every day find ourselves reusing elements of our work in different projects – be it formatting, framework, algorithms, etc. The same goes for most artists.</p>
+
+<p>Most importantly, though, his work <em>is</em> truly "fucking weird." But great, too, like my grandma said I was. Yet it is also sometimes uncomfortable to look at, like thinking and writing about my grandma while listening to "Gloria" on loop is proving to be as I put these words to text editor.</p>
+
+<p>The inspiration piece for this installation of <code>var t;</code> is Magritte's <em>La Clef des songes (The Interpretation of Dreams)</em>, specifically this piece made in 1935:</p>
+
+<p class="center"><img src="/assets/magritte/interpretationofdreams.jpg" title="La Clef des songes (The Interpretation of Dreams)" title="image of Magritte's La Clef des Songes painting" /></p>
+
+<p>Interestingly enough, this particular painting is part of American contemporary artist Jasper Johns' collection, at least according to the MoMA. The video below describes the painting and Magritte's intentions with it quite well:</p>
+
+<p class="center"><iframe src="http://www.moma.org/audios/embed/378/6544" width="480" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+
+<p>As with <a href="../mondrian">Mondrian</a>, I figured it would be a fun exercise to make a generative Magritte generator, this time reusing elements of his work but also adding some of my own. Magritte's work is not so mathematical or obviously programmatical. When I announced I was doing his work, most folks said "I'm really interested in how you are actually going to do that." To be frank, so was I. I should start learning to think before I speak, huh.</p>
+
+<p class="hr">&sext; &sext; &sext;</p>
+
+<h3>The Frame</h3>
+
+<p>I started with creating the "windows" and randomly generating the view and mismatched labels. These are in an array of objects that have properties <code>module</code> (what shows in the window), and <code>label</code> (the label beneath them). I'm using jQuery because <code>$.each()</code> is my boyfriend.</p>
+
+<p data-height="580" data-theme-id="9292" data-slug-hash="2fd8284347dfe98ff7bef8f2b84a665d" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/2fd8284347dfe98ff7bef8f2b84a665d/'>The Agony of JavaScripting Magritte Pt. 1</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p>Turns out, though, that one of the windows should be correctly labeled. It wasn't until I watched the MoMA video above when I remembered <em>valise</em> is French for briefcase. <em>Le woops.</em> So I made one of the windows randomly be correctly labeled.</p>
+
+<p data-height="580" data-theme-id="9292" data-slug-hash="5bc021c6c0b238a02e12dc1e57b5da53" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/5bc021c6c0b238a02e12dc1e57b5da53/'>The Agony of JavaScripting Magritte Pt. 2</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p>Finally I made this "painting" frame look a bit prettier. For the labels I am using this <a href="https://www.google.com/fonts/specimen/Cedarville+Cursive">Cedarvill Cursive</a> font from Google Fonts. It gets the job done.</p>
+
+<p data-height="650" data-theme-id="9292" data-slug-hash="80e2980e8c862750893b8d32a511db12" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/80e2980e8c862750893b8d32a511db12/'>The Agony of JavaScripting Magritte Pt. 3</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+
+<h3>Things</h3>
+
+<p>I wanted to include several Magritte-esque "things" or modules to show in the painting: an apple, bells, a bilboquet, a hat, and the sky. These are the recurring/reused themes in many of his paintings. Because this is my art and code blog and, therefore, can do whatever I want, I decided to add two of my own things: JavaScript and a rooster - more specifically <a href="http://instagram.com/p/uJjcVaPfyU">Bob, the Bocoup mascot</a>.</p>
+
+<p>I created html documents for each thing, with the intention of embedding them somehow into the frame programmatically. Originally I was going to use Polymer to treat each thing as a web component, but that got too tricky and tasky in combination with the random generation of the windows. Therefore, I decided to just embed them as iframes. No joke, I fucking <em>love</em> iframes.</p>
+
+<p>I'm not going to embed codepens for each module I created here, but I've listed them for you to check out. Most of them are drawn in CSS, with the exception of "The JavaScript," "The Rooster," and the actual bilboquets in "The Bilboquets":</p>
+
+<ul>
+  <li><a href="http://codepen.io/jennschiffer/pen/7c43ba1baa9cf295f441ef11698deacb">The Rooster</a> - starring Bob, the <a href="http://bocoup.com">Bocoup</a> mascot</li>
+  <li><a href="http://codepen.io/jennschiffer/pen/21a1869d59275ba6fc406c23bda1214a">The JavaScript</a> - apparently a language, I don't know</li>
+  <li><a href="http://codepen.io/jennschiffer/pen/0e6ff18b5a850fa93c42c2b8abdc543e">The Sky</a> - inspired by <em><a href="http://www.tate.org.uk/art/artworks/magritte-the-future-of-statues-t03258">The Future of Statues</a></em></li>
+  <li><a href="http://codepen.io/jennschiffer/pen/f3fc920e1701bdd65b3520662cd7d3af">The Hat</a> - inspired by <em><a href="http://www.wikiart.org/en/René-magritte/son-of-man-1964">The Son of Man</a></em></li>
+  <li><a href="http://codepen.io/jennschiffer/pen/c89b92372b8fc1dd3997d4cbb9597094">The Apple</a> also inspired by <em>Son of Man</em></li>
+  <li><a href="http://codepen.io/jennschiffer/pen/fb366bfc072b85add961be22314d3b0f">The Bilboquets</a> - inspired by the painting <em><a href="http://www.wikiart.org/en/René-magritte/fashionable-people-1950">Fashionable People</a></em></li>
+  <li><a href="http://codepen.io/jennschiffer/pen/f03637eea4e6a97636900e6c19e94d5f?editors=110">The Bells</a> - inspired by <em><a href="http://www.guggenheim.org/new-york/collections/collection-online/artwork/2593">The Voice of Space</a></em></li>
+</ul>
+
+<h3>The Final Product</h3>
+
+<p>With all the modules built, they are then embedded into the painted frame. That's all, das ist alles. So I present to you, now, <a href="demo.html"><em>The Agony of JavaScripting Magritte</em></a>:</p>
+
+<p data-height="750" data-theme-id="9292" data-slug-hash="1dfa8796ea8788c6e597d4ce0109f96d" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/1dfa8796ea8788c6e597d4ce0109f96d/'>The Agony of JavaScripting Magritte Pt. 4</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+<p>You can <a href="demo.html">click here for the full demo</a> as well.</p>
+
+<p class="hr">&sext; &sext; &sext;</p>
+
+<p>It would be unfair to call this installation an "agony" because I actually had fun making this. I guess that when I started out, the idea of all the CSS painting I'd have to do was overwhelming. It was fitting to do all of that painting, though, as the idea of using code as a medium can seem a bit surreal for many programmers. If you told me a few years ago I'd be spending a day making an apple and hat out of CSS and laying gradient backgrounds to some bilboquets, I'd probably say you were crazy and "what is a bilboquet, even?"</p>
+
+<p>On a final, somewhat related note: <em>The Interpretation of Dreams</em> is most certainly &sext;not&sext; my most favorite painting by Magritte. That honor goes to this precious gem:</p>
+
+<p class="center"><img src="/assets/magritte/jennsfavorite.jpg" /><br />
+  <span class="caption"><em>Jeune fille mangeant un oiseau (Le Plaisir)</em> or "Young Girl Eating a Bird (The Pleasure)"</span>
+</p>
+
+<p>Now <em>that's</em> pretty fucking weird. But it is great, too.</p>
+
+<p>Sources:
+  <ul>
+    <li><a href="http://en.wikipedia.org/wiki/Ren%C3%A9_Magritte">Wikipedia</a></li>
+    <li><a href="http://www.amazon.com/Gloria-Laura-Branigan/dp/B000667G6O">Laura Branigan's full-length album, <em>Gloria</em></a></li>
+  </ul>
+</p>
