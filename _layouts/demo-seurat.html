@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head-demo.html %}
+
+   <style type="text/css">
+    body { font-family: Helvetica; padding: 1em; }
+
+    #container p { margin: 0 0 2em; }
+    label { font-weight: bold; text-transform: uppercase; font-size: 1.5em; display: block; margin: .5em 0; }
+    
+    #menu { position: absolute; top: 10px; right: 10px; text-align: right;   }
+    #menu a { text-decoration: none; color: black; font-weight: bold; font-size: 1.2em; }
+    #menu p { margin-bottom: 10px; }
+    #menu small { font-family: monospace; }
+    
+    .hide { display: none; }
+  </style>
+</head>
+
+<body id="seurat">
+
+  <div id="container">
+    <p>
+      <label for="upload-image">1. upload an image</label>
+      <input type="file" id="upload-image" name="upload-image" />
+    </p>
+  
+    <p id="frame-container">
+      <canvas id="image-canvas"></canvas>
+      <canvas id="frame-canvas"></canvas>
+    </p>
+  </div>
+  
+  <div id="menu"> 
+  
+    <div class="tray">
+      <p><a href="index.html">SEURAT.EXTEND()<br /> a <code>var t;</code> demo</a></p>
+      <p><small>upload an image, get an art<br /><a href="index.html">learn about  george-pierre seurat</a></small></p>
+      <div>
+        <button class="clear">Clear</button>
+        <button class="save">Save</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/assets/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(function() {
+    
+      var $uploadInput = $('#upload-image');
+      var $frameContainer = $('#frame-container');
+      var canvas = $('#frame-canvas')[0];
+      var imgCanvas = $('#image-canvas')[0];
+      var ctx = canvas.getContext('2d');
+      var imgCtx = imgCanvas.getContext('2d');
+    
+      var $buttonClear = $('button.clear');
+      var $buttonSave = $('button.save');
+    
+      var pixelSize = 5;
+      var framePixelCount = 0;
+      var colorIndex = 0;
+      var colorPointer = 0;
+      var frameSize, colorArray, img;
+    
+      $('#image-canvas').hide();
+    
+      /** HELPER FUNCTIONS **/
+    
+      var calculateFrameSize = function(dimension) {
+        // returns computer-pixel width of frame
+        var size = pixelSize * Math.ceil((dimension * .1) / pixelSize);
+        return size;
+      };
+    
+      var generateColorArray = function() {
+        var colors = [];
+    
+        // for now, grab random pixels for framePixelCount # of colors
+        for (var i = 0; i < (img.width - 1) * (img.height - 1); i++) {
+          var randX = (Math.floor(Math.random() * (img.width)));
+          var randY = (Math.floor(Math.random() * (img.height)));
+          var d = imgCtx.getImageData(randX, randY, 1, 1).data;
+          var rgb = 'rgb(' + d[0] + ',' + d[1] + ',' + d[2] + ')';
+    
+          //if ( colors.indexOf(rgb) === -1 && d) {
+          colors.push(rgb);
+          colorPointer++;
+          //}
+    
+        }
+        return colors;
+      };
+    
+      var drawFrameDiagonal = function(x, y) {
+        // only draw if pixel is outside of image
+        if (
+          x < frameSize ||
+          y < frameSize ||
+          x >= canvas.width - frameSize - 1 ||
+          y >= canvas.height - frameSize - 1
+        ) {
+          ctx.fillStyle = colorArray[colorIndex];
+          ctx.fillRect(x, y, pixelSize, pixelSize);
+          framePixelCount++;
+    
+          if (colorIndex === colorArray.length) {
+            colorIndex = 0;
+          } else {
+            colorIndex++;
+          }
+        }
+    
+        x = x + pixelSize;
+        y = y - pixelSize;
+    
+        if (x >= 0 && y >= 0) {
+          drawFrameDiagonal(x, y);
+        }
+      };
+    
+      var drawFrame = function() {
+        for (var y = 0; y <= canvas.height; y = y + pixelSize) {
+          drawFrameDiagonal(0, y);
+        }
+    
+        for (var x = pixelSize; x <= canvas.width; x = x + pixelSize) {
+          drawFrameDiagonal(x, canvas.height - pixelSize);
+        }
+      };
+    
+      /** EVENTS **/
+    
+      // when uploading an image, embed it onto canvas and show it
+      $uploadInput.change(function() {
+    
+        // embed image onto canvas
+        var uploadedImage = $uploadInput[0].files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          img = new Image();
+          img.onload = function() {
+    
+            // resize image to fit grid
+            img.width = img.width - (img.width % pixelSize);
+            img.height = img.height - (img.height % pixelSize);
+    
+            imgCanvas.width = img.width;
+            imgCanvas.height = img.height;
+            imgCtx.drawImage(img, 0, 0);
+    
+            // calculate frame width off of smallest dimension
+            frameSize = calculateFrameSize(Math.min(img.width, img.height));
+    
+            canvas.width = img.width + 2 * frameSize;
+            canvas.height = img.height + 2 * frameSize;
+            ctx.drawImage(img, frameSize, frameSize);
+    
+            // generate color array and draw frame when array is ready
+            $.when(generateColorArray()).
+            then(function(data) {
+              colorArray = data;
+              drawFrame();
+            });
+    
+          };
+    
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(uploadedImage);
+    
+        // show sketch container
+        $frameContainer.removeClass('hide');
+      });
+    
+      // clear canvas when clear button clicked
+      $buttonClear.click(function() {
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+        $frameContainer.addClass('hide');
+      });
+    
+      // open png in new window when save button clicked
+      $buttonSave.click(function() {
+        window.open(canvas.toDataURL('image/png'));
+      });
+    
+    });
+    </script>  
+        
+    <script src="//pmetrics.performancing.com/js" type="text/javascript"></script>
+    <script type="text/javascript">try{ clicky.init(23165); }catch(e){}</script>
+    <noscript><p><img alt="Performancing Metrics" width="1" height="1" src="//pmetrics.performancing.com/23165ns.gif" /></p></noscript>
+  </body>
+
+</html>

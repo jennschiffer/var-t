@@ -1,0 +1,85 @@
+---
+layout: post
+permalink: /seurat/index.html
+demolink: /searat/demo.html
+title:  "Georges-Pierre Seurat"
+date:   2015-07-14
+categories: vartist story seurat
+---
+
+<h3 class="title">// Georges-Pierre Seurat <a href="demo.html">[demo]</a></h3>
+
+<blockquote>"Some say they see poetry in my paintings; I see only science." - Georges-Pierre Seurat</blockquote>
+
+Cool, another vart post.
+
+<p class="hr">&sext; &sext; &sext;</p>
+
+### The Canvas
+
+Just like in my <a href="/cassatt/demo.html">De-sketching Cassatt</a> demo, this app will have a form to upload an image and a blank canvas where the final product will show. I was able to reuse most of the code from that demo for this part.
+
+<p data-height="268" data-theme-id="16673" data-slug-hash="3f226299e2b955b47f2cf0bc2c1d4bef" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/3f226299e2b955b47f2cf0bc2c1d4bef/'>Seurat.extend() - Part 1</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+In this app, instead of allowing the user to manipulate the image on the canvas, the app will do all of the work and output the final product to save. Just to test the upload and the buttons, though, I initially made an event that puts the uploaded image to the canvas and makes the clear and save buttons work. If you've followed past vart demos, this will be both familiar and trivial to you.
+
+<p data-height="400" data-theme-id="16673" data-slug-hash="5c4a63d6a4eab0851834130f0b3675b7" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/5c4a63d6a4eab0851834130f0b3675b7/'>Seurat.extend() - Part 2</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+### The Frame
+
+I think that 10% of the smallest dimension of the image is a good size for the frame, so I create a function that calculates that, but rounds up to the nearest multiple of our "pixel size" of 15px. Instead of the canvas being the image size, it will be the image size plus the frame, with the image drawn at the coordinate (frameSize, frameSize).
+
+<p data-height="400" data-theme-id="16673" data-slug-hash="c297bd906f5b6b4df0ec10f8209ca54e" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/c297bd906f5b6b4df0ec10f8209ca54e/'>Seurat.extend() - Part 3</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+I gave the canvas a background color of "hotpink" to show the space around the image uploaded. For example, this image has a white background and the pink border is the space for our future frame.
+
+<img src="/assets/seurat/frame-example.png" />
+
+Before processing the colors of the image, I want to prototype the drawing of the frame. I created a function `drawFrame` that draws the frame in lime all around the image in lime. This involves going through each "pixel" and figuring out if it's part of the frame or the image. We don't want to draw on the image, after all.
+
+<p data-height="400" data-theme-id="16673" data-slug-hash="8c3629a76b715f8ec63b5ad577fe7bfb" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/8c3629a76b715f8ec63b5ad577fe7bfb/'>Seurat.extend() - Part 4</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+So there were two issues I had with this drawing of the frame. For one, the image does not always have dimensions that are multiples of the pixel size, so usually there is space around the edges between the image and frame.
+
+<img src="/assets/seurat/frame-example-2.png" />
+
+This is remedied by making the image width and height itself minus the remainder of itself divided by pixel size. This will lead to changes of the image, sure, but it's pretty nominal and gets better the smaller your frame pixel size goes.
+
+The second issue is the direction of the pixels drawn. Initially it was set up in a typewriter fashion - each row from left to right until the bottom of the canvas is reached. This is boring and also not really how Seurat did his frames. I remedied this by creating a recursive function that draws the pixels diagonally. You have to do 2 passes through, as seen in the image below where the first pass is in cyan and the second is in lime.
+
+<img src="/assets/seurat/frame-example-3.png" />
+
+<p data-height="400" data-theme-id="16673" data-slug-hash="994503ed06d8bc60bf19fbcf91ded8ad" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/994503ed06d8bc60bf19fbcf91ded8ad/'>Seurat.extend() - Part 5</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+Now all that is left is the fun/hard part.
+
+### The colors
+
+We want to have an array of colors from the image, so I decided to pick random coordinates (which makes our artwork generative, i.e. unique with every upload) and create an array with a length matching the total number of image pixels. Then I draw the pixel frame using that array of colors.
+
+<img src="/assets/seurat/pear-1.png" />
+
+
+I lost the codepen of this part (woops) but that's fine because although this looks cool, Seurat's frames had more of a pattern and process than just random color stippling. He involved a lot of color theory and trickery in his work that goes beyond what the browser can even handle with JavaScript. I wanted to, at the very least, only have a color come up once in our color array. Shortening the array means more chance for patterns within the frame. 
+
+<img src="/assets/seurat/pear-2.png" />
+
+See, pretty cool! The source is below:
+
+<p data-height="400" data-theme-id="16673" data-slug-hash="a697f16beeae5a2f54f8479c56bb4d53" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/a697f16beeae5a2f54f8479c56bb4d53/'>Seurat.extend() - Part 7</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+### [Extend your own images here on the Seurat.extend() demo page!](/demo.html)
+
+<p class="hr">&sext; &sext; &sext;</p>
+
+
+
+Wow, done.
+
+<p>Sources:
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/Georges_Seurat">wikipedia</a></li>
+    <li><a href="http://www.theartstory.org/artist-seurat-georges.htm">theartstory.org</a></li>
+    <li><a href="http://www.moma.org/collection/works/79333">MoMA</a></li>
+  </ul>
+</p>
