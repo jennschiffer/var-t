@@ -96,7 +96,7 @@ See, pretty cool! Of course, the larger your image and more colors it has, the l
 
 <p data-height="400" data-theme-id="16673" data-slug-hash="a697f16beeae5a2f54f8479c56bb4d53" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/a697f16beeae5a2f54f8479c56bb4d53/'>Seurat.extend() - Part 7</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
-### [Extend your own images here on the Seurat.extend() demo page!](/demo.html)
+### [Extend your own images here on the Seurat.extend() demo page!](demo.html)
 
 <p class="hr">&sext; &sext; &sext;</p>
 
