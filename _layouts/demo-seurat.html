@@ -36,7 +36,7 @@
   
     <div class="tray">
       <p><a href="index.html">SEURAT.EXTEND()<br /> a <code>var t;</code> demo</a></p>
-      <p><small>upload an image, get an art<br /><a href="index.html">learn about  george-pierre seurat</a></small></p>
+      <p><small>upload a <strong>small</strong> image, get an art<br /><a href="index.html">learn about  george-pierre seurat</a></small></p>
       <div>
         <button class="clear">Clear</button>
         <button class="save">Save</button>
@@ -84,11 +84,11 @@
           var d = imgCtx.getImageData(randX, randY, 1, 1).data;
           var rgb = 'rgb(' + d[0] + ',' + d[1] + ',' + d[2] + ')';
     
-          //if ( colors.indexOf(rgb) === -1 && d) {
-          colors.push(rgb);
-          colorPointer++;
-          //}
-    
+          if ( colors.indexOf(rgb) === -1 && d) {
+            colors.push(rgb);
+            colorPointer++;
+          }
+  
         }
         return colors;
       };

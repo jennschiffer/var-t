@@ -11,7 +11,35 @@ categories: vartist story seurat
 
 <blockquote>"Some say they see poetry in my paintings; I see only science." - Georges-Pierre Seurat</blockquote>
 
-Cool, another vart post.
+"95% of blog posts begin with an apology for letting so much time go between that post and the last" is a cool made-up statistic I just came up with. Even though it's been five months since I [deconstructed Cassatt](/cassatt), I won't apologize because 1. I am never sorry and 2. there's nothing for me to be sorry about. These past few months have involved a lot of talking about vart, creating art, and both getting and recovering from burnout. It's been terrible and great, and now things are great, so
+
+### *~* the vitch is back *~*
+
+So, yeah, I have been doing a lot of traveling, conference talking, making art, and seeing art. And what is great is how friends from all over have been visiting and insisting on museum and gallery hopping with me, which is what I'd much rather do than go to tech meetups or drink all the alcohols – even though both of those activities do lend themselves to occasional fun and entertainment. 
+
+A few months ago, my friend [Liz](https://twitter.com/infraredflower) (probably short for "Lizard" but I highly doubt it) came into town and we went to the [MoMA](http://moma.org). One of my favorite pieces there is a painting called "Evening, Honfleur" by Georges-Pierre Seurat. It's not the painting that I love in particular, though, it's the frame.
+
+<img src="/assets/seurat/honfleur.png" />
+
+<p class="caption">"Evening, Honfleur" 1886</p>
+
+Georges-Pierre Seurat was a French painter who basically started the Neo-Impressionist movement in the latter quarter of the 1800s. He was young and died young, at age 31. His most recognizable painting, "A Sunday Afternoon on the Island of La Grande Jatte" began an era of academic paintings that were beautiful and mixed science and politics with impressionism. 
+
+<img src="/assets/seurat/sunday.png" />
+
+<p class="caption">"A Sunday Afternoon on the Island of La Grande Jatte" 1886</p>
+
+If you zoom in on this painting's edges, you'll see he also created a neat stippling border like the did the frame of *Evening, Honfleur*.
+
+<img src="/assets/seurat/same.png" />
+
+<p class="caption">selfie, 2015</p>
+
+Being a pixel artist who also uses colored pencil, my process is tedious yet therapeutic, like I imagine Seurat's painstaking stippling work was. Not only did he have such focused and beautiful stippling, but he used color theory to play tricks on the eyes and make colors so much more vibrant. Look at the man lounging above – his pants look like off-white linen, but closely you can see that so many colors were used to create them!
+
+In extending the painting to the frame, Seurat had control over his constraints of space and color. The frames and borders he painting usually were complimentary to the the canvas, more so in *A Sunday Afternoon* than in *Honfleur*, and it is not anything like I had experienced or conceived of being able to do before. This is why *Evening, Honfleur* is my most favorite piece in the MoMA.
+
+For this latest installation in the vart institute, I created an app that generates pixelated frames around uploaded images using the colors within that image. I call it *seurat.extend()* but it doesn't use the `extend()` function. See, that is a programming pun. A play on words related to code. Okay I'm extending this paragraph way too long, let's code!
 
 <p class="hr">&sext; &sext; &sext;</p>
 
@@ -64,7 +92,7 @@ I lost the codepen of this part (woops) but that's fine because although this lo
 
 <img src="/assets/seurat/pear-2.png" />
 
-See, pretty cool! The source is below:
+See, pretty cool! Of course, the larger your image and more colors it has, the longer it takes. It definitely hangs a bit in the browser, so whisper softly to your computer as you upload a nice petite-sized image. The source is below:
 
 <p data-height="400" data-theme-id="16673" data-slug-hash="a697f16beeae5a2f54f8479c56bb4d53" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/a697f16beeae5a2f54f8479c56bb4d53/'>Seurat.extend() - Part 7</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
@@ -72,9 +100,9 @@ See, pretty cool! The source is below:
 
 <p class="hr">&sext; &sext; &sext;</p>
 
+This project for me, in particular, made me face technical constraints in a way that previous apps on this site have not. Color theory involves math, and a lot of math means a lot of work on the browser. I had to hold back a lot in what can be done with colors because I didn't want to crash all of your browsers (youuuuu're wellllcommme). My coworker and best friend, <a href="http://twitter.com/brianloveswords">Brian</a> is working on a color sorting thing much like what I wanted to do here, and he too hit a road block with browser performance and is now involving web workers and all sorts of fun cutting-edge web stuff. I love working with and being pals with smart people who like and make art.
 
-
-Wow, done.
+Another tough part was not having any actual emotional connection to the artist, just the painting. I did that on purpose this time around.  Writing about [Mary Cassatt](/cassatt) was both emotional and difficult and sad, but this project made me happy and think of nice friends and happenings I've had since I last posted. I look forward to more of that, and more artistic exploration, this summer.
 
 <p>Sources:
   <ul>
