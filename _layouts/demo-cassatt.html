@@ -20,6 +20,9 @@
     button.in-use { background-color: lime; border-color: lime; }
     
     .hide { display: none; }
+
+    #background-canvas { position: absolute; top: 0px; left: 0px; }
+    #sketch-canvas { position: absolute; top: 0px; left: 0px; }
   </style>
 </head>
 
@@ -34,6 +37,7 @@
     <p id="sketch-container" class="hide">
       <label>2. Draw some edges or erase for a "sketched" look.</label>
   
+      <canvas id="background-canvas"></canvas>
       <canvas id="sketch-canvas"></canvas>
     </p>
   </div>
@@ -59,7 +63,9 @@
     var $uploadInput = $('#upload-image');
     var $sketchContainer = $('#sketch-container');
     var $sketchTools = $('#sketch-tools').addClass('hide');
+    var backgroundCanvas = $('#background-canvas')[0];
     var canvas = $('#sketch-canvas')[0];
+    var bgctx = backgroundCanvas.getContext('2d');
     var ctx = canvas.getContext('2d');
   
     var $buttonClear = $('button.clear');
@@ -85,9 +91,11 @@
       reader.onload = function(e){
         var img = new Image();
         img.onload =function() {
+          backgroundCanvas.width = img.width;
+          backgroundCanvas.height = img.height;
           canvas.width = img.width;
           canvas.height = img.height;
-          ctx.drawImage(img,0,0);
+          bgctx.drawImage(img,0,0);
         }
         img.src = e.target.result;
       };
@@ -109,7 +117,16 @@
   
     // open png in new window when save button clicked
     $buttonSave.click(function(){
-      window.open(canvas.toDataURL('image/png'));
+      // create a new canvas to hold our resulting image
+      var saveCanvas = document.createElement("canvas");
+      saveCanvas.width = canvas.width;
+      saveCanvas.height = canvas.height;
+
+      // draw the background on it and then the foreground
+      var sctx = saveCanvas.getContext('2d');
+      sctx.drawImage(backgroundCanvas, 0, 0);
+      sctx.drawImage(canvas, 0, 0);
+      window.open(saveCanvas.toDataURL('image/png'));
     });
     
     // use pencil when pencil button clicked
@@ -162,23 +179,7 @@
     
     var erase = function(x, y, width) {
       
-      var currentPixelData;
-      
-      // for each pixel within width/2 pixels of (x,y)
-      for ( var i = x - width/2; i < x + width/2; i++ ) {
-        for ( var j = y - width/2; j < y + width/2; j++ ) {
-  
-          // get pixel color 
-          currentPixelData = ctx.getImageData(i,j,1,1).data;
-  
-          // if current pixel's color isn't grey, erase
-          if ( !(currentPixelData[0] == 137 && currentPixelData[1] == 113 && currentPixelData[2] == 113) ) {
-            ctx.clearRect(i,j,1,1);
-          }
-          
-        }
-      }
-      
+      bgctx.clearRect(x,y,width,width);
     };
   
   });
