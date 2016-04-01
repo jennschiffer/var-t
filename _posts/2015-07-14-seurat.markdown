@@ -29,7 +29,7 @@ Georges-Pierre Seurat was a French painter who basically started the Neo-Impress
 
 <p class="caption">"A Sunday Afternoon on the Island of La Grande Jatte" 1886</p>
 
-If you zoom in on this painting's edges, you'll see he also created a neat stippling border like the did the frame of *Evening, Honfleur*.
+If you zoom in on this painting's edges, you'll see he also created a neat stippling border like he did on the frame of *Evening, Honfleur*.
 
 <img src="/assets/seurat/same.png" />
 
@@ -37,7 +37,7 @@ If you zoom in on this painting's edges, you'll see he also created a neat stipp
 
 Being a pixel artist who also uses colored pencil, my process is tedious yet therapeutic, like I imagine Seurat's painstaking stippling work was. Not only did he have such focused and beautiful stippling, but he used color theory to play tricks on the eyes and make colors so much more vibrant. Look at the man lounging above – his pants look like off-white linen, but closely you can see that so many colors were used to create them!
 
-In extending the painting to the frame, Seurat had control over his constraints of space and color. The frames and borders he painting usually were complimentary to the the canvas, more so in *A Sunday Afternoon* than in *Honfleur*, and it is not anything like I had experienced or conceived of being able to do before. This is why *Evening, Honfleur* is my most favorite piece in the MoMA.
+In extending the painting to the frame, Seurat had control over his constraints of space and color. The frames and borders he painting usually were complimentary to the canvas, more so in *A Sunday Afternoon* than in *Honfleur*, and it is not anything like I had experienced or conceived of being able to do before. This is why *Evening, Honfleur* is my most favorite piece in the MoMA.
 
 For this latest installation in the vart institute, I created an app that generates pixelated frames around uploaded images using the colors within that image. I call it *seurat.extend()* but it doesn't use the `extend()` function. See, that is a programming pun. A play on words related to code. Okay I'm extending this paragraph way too long, let's code!
 
