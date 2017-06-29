@@ -2,31 +2,30 @@
 
     <div class="table-of-contents">
       <h3>// (v)artists</h3>
-      
+
       <ol>
         {% for post in site.categories["story"] reversed %}
           <li>
-            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> &bull; 
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> &bull;
             <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
           </li>
         {% endfor %}
-      </ol> 
+      </ol>
     </div>
-    
+
     <div id="about">
-      <p><a href="{{ site.website }}">{{ site.author }}</a> is an engineer at <a href="http://bocoup.com">Bocoup</a> and artist-in-residence at the <a href="http://nymediacenter.com/">Made in NY Media Center</a>. She spends her free time enjoying and creating art, writing satire, and getting yelled at on the Internet. If you are nice, you can tweet her <a href="http://twitter.com/jennschiffer">@jennschiffer</a> or email her at {{ site.email }}.</p>
+      <p><a href="{{ site.website }}">{{ site.author }}</a> is the <a href="http://glitch.com">glitch</a> community engineer at <a href="http://fogcreek.com">Fog Creek</a>. She spends her free time enjoying and creating art, writing satire, and getting yelled at on the Internet. If you are nice, you can tweet her <a href="http://twitter.com/jennschiffer">@jennschiffer</a> or email her at {{ site.email }}.</p>
     </div>
-    
+
     <div id="press">
       <h3>// people talking about vart</h3>
-      
+
       <ul>
         <li><a href="http://www.studio360.org/story/what-if-mondrian-were-a-programmer-vart/">"What If Mondrian Were A Programmer"</a> Studio 360, WNYC's Peabody Award-winning podcast, did a short and sweet interview of me about the project and now all the public radio listeners wanna be my friend on Facebook :)</li>
         <li><a href="http://killscreendaily.com/articles/computer-mondrian/">"Everyone is Mondrian. Nobody is Mondrian. Your Computer Is Mondrian."</a> Kill Screen's David Rudin asks what Mondrian would think of my recreating his work. I think he'd say "whatever."</li>
       </ul>
     </div>
-  
+
     <div id="copyright"><a href="{{ site.website }}">&copy; {{ site.copyright }} {{ site.author }}</a> &bull; <a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe via RSS</a> &bull; <a href="{{ site.repo }}">view the source on github</a></div>
-  
+
   </footer>
-  
