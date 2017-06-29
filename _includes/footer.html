@@ -6,8 +6,7 @@
       <ol>
         {% for post in site.categories["story"] reversed %}
           <li>
-            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> &bull;
-            <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           </li>
         {% endfor %}
       </ol>
