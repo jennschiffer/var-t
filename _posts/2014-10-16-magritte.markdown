@@ -6,7 +6,7 @@ date:   2014-10-16
 categories: vartist story magritte
 ---
 
-<h3 class="title">// René Magritte <a href="https://vart-magritte.glitch.me/l">[demo]</a></h3>
+<h3 class="title">// René Magritte <a href="https://vart-magritte.glitch.me">[demo]</a></h3>
 
 <blockquote>"The Surreal is but reality that has not been disconnected from its mystery." - René Magritte</blockquote>
 
