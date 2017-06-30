@@ -6,7 +6,7 @@ date:   2014-10-16
 categories: vartist story magritte
 ---
 
-<h3 class="title">// René Magritte <a href="demo.html">[demo]</a></h3>
+<h3 class="title">// René Magritte <a href="https://vart-magritte.glitch.me/l">[demo]</a></h3>
 
 <blockquote>"The Surreal is but reality that has not been disconnected from its mystery." - René Magritte</blockquote>
 
@@ -67,11 +67,11 @@ categories: vartist story magritte
 
 <h3>The Final Product</h3>
 
-<p>With all the modules built, they are then embedded into the painted frame. That's all, das ist alles. So I present to you, now, <a href="demo.html"><em>The Agony of JavaScripting Magritte</em></a>:</p>
+<p>With all the modules built, they are then embedded into the painted frame. That's all, das ist alles. So I present to you, now, <a href="https://vart-magritte.glitch.me/"><em>The Agony of JavaScripting Magritte</em></a>:</p>
 
 <p data-height="750" data-theme-id="9292" data-slug-hash="1dfa8796ea8788c6e597d4ce0109f96d" data-default-tab="result" data-user="jennschiffer" class='codepen'>See the Pen <a href='http://codepen.io/jennschiffer/pen/1dfa8796ea8788c6e597d4ce0109f96d/'>The Agony of JavaScripting Magritte Pt. 4</a> by Jenn (<a href='http://codepen.io/jennschiffer'>@jennschiffer</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 
-<p>You can <a href="demo.html">click here for the full demo</a> as well.</p>
+<p>You can <a href="https://vart-magritte.glitch.me/">click here for the full demo</a> as well. Also, [view the source on glitch](https://glitch.com/edit/#!/vart-magritte)</p>
 
 <p class="hr">&sext; &sext; &sext;</p>
 
